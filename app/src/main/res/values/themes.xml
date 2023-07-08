@@ -13,4 +13,14 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Button.OutlineBox" parent="Widget.MaterialComponents.Button.OutlinedButton">
+    </style>
+
+    <style name="Theme.DietProApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.DietProApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.DietProApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
