@@ -1,5 +1,6 @@
 package com.example.dietproapp.core.data.source.remote.network
 
+import com.example.dietproapp.util.Constants
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -9,7 +10,7 @@ import java.util.concurrent.TimeUnit
 
 object ApiConfig {
 
-    private const val BASE_URL = "https://127.0.0.1:8000/api/"
+    private const val BASE_URL = Constants.BASE_URL + "api/"
 
     private val client: Retrofit
         get() {
