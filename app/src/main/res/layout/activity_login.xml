@@ -15,10 +15,10 @@
 
         <ImageView
             android:id="@+id/image_logo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@drawable/LogoDietPro" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:background="@color/white"
-                android:hint="Email"
+                android:hint="Email or Username"
                 android:inputType="textEmailAddress"
                 android:paddingStart="0dp"
                 android:text="dietproapp@gmail.com" />
@@ -111,7 +111,7 @@
             android:textAllCaps="false"
             android:textColor="#AAAAAA"
             android:textSize="@dimen/_13ssp"
-            app:icon="@drawable/ic_launcher_foreground"
+            app:icon="@drawable/Google"
             app:iconSize="@dimen/_19sdp"
             app:iconTint="@null" />
 

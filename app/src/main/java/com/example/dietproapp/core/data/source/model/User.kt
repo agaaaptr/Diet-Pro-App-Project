@@ -1,6 +1,6 @@
 package com.example.dietproapp.core.data.source.model
 
-data class infoUser(
+data class User(
     val berat_badan: Any?,
     val created_at: String?,
     val email: String?,

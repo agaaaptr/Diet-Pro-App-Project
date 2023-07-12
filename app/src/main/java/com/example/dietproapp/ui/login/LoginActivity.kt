@@ -2,7 +2,6 @@ package com.example.dietproapp.ui.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import com.example.dietproapp.NavigasiActivity
 import com.example.dietproapp.core.data.source.remote.network.State
 import com.example.dietproapp.core.data.source.remote.request.LoginRequest
@@ -13,30 +12,36 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginActivity : AppCompatActivity() {
 
-    private val viewModel   :   LoginViewModel  by  viewModel()
+    private val viewModel: LoginViewModel by viewModel()
 
-    private lateinit var binding: ActivityLoginBinding
+    private var _binding: ActivityLoginBinding?  =   null
+    private val binding get()   =   _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
+        _binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setData()
 
     }
 
-    private fun setData()   {
+    private fun setData() {
+
+        viewModel.text.observe(this) {
+            binding.edtEmail.setText(it)
+        }
+
         binding.btnMasuk.setOnClickListener {
             login()
         }
 
     }
 
-    private fun login()  {
+    private fun login() {
 
         if (binding.edtEmail.isEmpty()) return
-        if (binding.edtPassword.isEmpty(false))  return
+        if (binding.edtPassword.isEmpty()) return
 
         val body = LoginRequest(
             binding.edtEmail.text.toString(),
@@ -44,26 +49,27 @@ class LoginActivity : AppCompatActivity() {
             binding.edtPassword.text.toString()
         )
 
-        viewModel.login(body).observe(  this) {
+        viewModel.login(body).observe(this) {
 
             when (it.state) {
                 State.SUCCESS -> {
-                    binding.pd.toGone()
+                    dismisLoading()
                     showToast("Selamat datang " + it.data?.nama)
                     pushActivity(NavigasiActivity::class.java)
                 }
                 State.ERROR -> {
-                    binding.pd.toGone()
+                    dismisLoading()
                     toastError(it.message ?: "Error")
                 }
                 State.LOADING -> {
-                    binding.pd.toVisible()
+                    showLoading()
                 }
             }
 
-            showToast("Selamat datang  " + it?.data!!.nama)
+//            showToast("Selamat datang  " + it?.data?.nama)
         }
     }
+}
 
 //    fun testing() {
 //        val s   =   SPrefs(this)
@@ -84,4 +90,3 @@ class LoginActivity : AppCompatActivity() {
 //        Log.d("RESPON", "PESAN SINGKAT")
 //    }
 
-}

@@ -10,7 +10,7 @@ import com.example.dietproapp.core.data.source.remote.request.LoginRequest
 class LoginViewModel(val repo:AppRepository): ViewModel() {
 
     private val _text   =   MutableLiveData<String>().apply {
-        value = "Hy Lord"
+        value = "ruspram@gmail.com"
     }
 
     val text : LiveData<String> =   _text

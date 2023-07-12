@@ -1,8 +1,8 @@
 package com.example.dietproapp.core.data.source.remote.network
 
-data class Resource<out T>(val state: State, val data: T?, val message: String?, val loading :Boolean = false) {
+data class Resource<out T>(val state: State, val data:  T?, val message:  String?)  {
 
-    companion object {
+    companion object    {
 
         fun <T> success(data: T?): Resource<T> {
             return Resource(State.SUCCESS, data, null)
@@ -13,8 +13,9 @@ data class Resource<out T>(val state: State, val data: T?, val message: String?,
         }
 
         fun <T> loading(data: T?): Resource<T> {
-            return Resource(State.LOADING, data, null, loading = true)
+            return Resource(State.LOADING, data, null)
         }
 
     }
+
 }

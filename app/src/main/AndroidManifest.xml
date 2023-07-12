@@ -22,8 +22,7 @@
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="true"
-            android:label="@string/title_activity_login"
-            android:theme="@style/Theme.DietProApp.NoActionBar">
+            android:label="@string/title_activity_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,7 +35,7 @@
         </activity>
         <activity
             android:name=".NavigasiActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/title_activity_navigasi">
             <meta-data
                 android:name="android.app.lib_name"
@@ -44,7 +43,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
