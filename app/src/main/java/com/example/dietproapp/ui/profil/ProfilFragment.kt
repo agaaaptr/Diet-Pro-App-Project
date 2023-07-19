@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.dietproapp.databinding.FragmentProfilBinding
 import com.example.dietproapp.ui.login.LoginActivity
 import com.example.dietproapp.util.SPrefs
+import com.inyongtisto.myhelper.extension.getInitial
 import com.inyongtisto.myhelper.extension.pushActivity
 
 class ProfilFragment : Fragment() {
@@ -49,6 +50,7 @@ class ProfilFragment : Fragment() {
             binding.apply {
                 tvNamaProfil.text = user.nama
                 tvEmailProfil.text  = user.email
+                tvInisialProfil.text    =   user.nama.getInitial()
             }
         }
     }

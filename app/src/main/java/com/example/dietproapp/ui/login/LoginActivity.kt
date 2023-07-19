@@ -59,16 +59,16 @@ class LoginActivity : AppCompatActivity() {
 
             when (it.state) {
                 State.SUCCESS -> {
-                    dismisLoading()
+//                    dismisLoading()
                     showToast("Selamat datang " + it.data?.nama)
                     pushActivity(NavigasiActivity::class.java)
                 }
                 State.ERROR -> {
-                    dismisLoading()
+//                    dismisLoading()
                     toastError(it.message ?: "Error")
                 }
                 State.LOADING -> {
-                    showLoading()
+//                    showLoading()
                 }
             }
 

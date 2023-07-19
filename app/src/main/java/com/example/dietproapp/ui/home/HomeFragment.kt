@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.dietproapp.databinding.FragmentHomeBinding
 import com.example.dietproapp.util.SPrefs
+import com.inyongtisto.myhelper.extension.getInitial
 
 class HomeFragment : Fragment() {
 
@@ -38,6 +39,7 @@ class HomeFragment : Fragment() {
             binding.apply {
                 tvNamaProfil.text = user.nama
                 tvEmailProfil.text  = user.email
+                tvInisialProfil.text    =   user.nama.getInitial()
             }
         }
     }
