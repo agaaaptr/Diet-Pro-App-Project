@@ -1,4 +1,4 @@
-package com.example.dietproapp.ui.home
+package com.example.dietproapp.ui.profil
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,12 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.dietproapp.databinding.FragmentHomeBinding
+import com.example.dietproapp.databinding.FragmentProfilBinding
+import com.example.dietproapp.ui.login.LoginActivity
 import com.example.dietproapp.util.SPrefs
+import com.inyongtisto.myhelper.extension.pushActivity
 
-class HomeFragment : Fragment() {
+class ProfilFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private lateinit var profilViewModel: ProfilViewModel
+    private var _binding: FragmentProfilBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +25,22 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val profilViewModel =
+            ViewModelProvider(this).get(ProfilViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentProfilBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         setUser()
+        mainButton()
         return root
+    }
+
+    fun mainButton() {
+        binding.btnKeluar.setOnClickListener {
+            SPrefs.isLogin  =   false
+            pushActivity(LoginActivity::class.java)
+        }
     }
 
     private fun setUser()   {
@@ -46,4 +57,5 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

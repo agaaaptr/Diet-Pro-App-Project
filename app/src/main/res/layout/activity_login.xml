@@ -18,7 +18,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
-            android:src="@drawable/LogoDietPro" />
+            android:src="@drawable/dietpro" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -111,7 +111,7 @@
             android:textAllCaps="false"
             android:textColor="#AAAAAA"
             android:textSize="@dimen/_13ssp"
-            app:icon="@drawable/Google"
+            app:icon="@drawable/google"
             app:iconSize="@dimen/_19sdp"
             app:iconTint="@null" />
 
@@ -130,7 +130,7 @@
                 android:text="Belum punya akun?" />
 
             <TextView
-                android:id="@+id/btn_daftar"
+                android:id="@+id/btnMove_daftar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Daftar"

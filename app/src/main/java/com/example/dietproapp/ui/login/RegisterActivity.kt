@@ -4,64 +4,55 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dietproapp.NavigasiActivity
 import com.example.dietproapp.core.data.source.remote.network.State
-import com.example.dietproapp.core.data.source.remote.request.LoginRequest
-import com.example.dietproapp.databinding.ActivityLoginBinding
+import com.example.dietproapp.core.data.source.remote.request.RegisterRequest
+import com.example.dietproapp.databinding.ActivityRegisterBinding
 import com.inyongtisto.myhelper.extension.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class LoginActivity : AppCompatActivity() {
-
+class RegisterActivity : AppCompatActivity() {
     private val viewModel: AuthViewModel by viewModel()
 
-    private var _binding: ActivityLoginBinding?  =   null
+    private var _binding: ActivityRegisterBinding?  =   null
     private val binding get()   =   _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = ActivityLoginBinding.inflate(layoutInflater)
+        _binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setData()
-        mainButton()
-    }
-
-    private fun mainButton() {
-        binding.btnMasuk.setOnClickListener {
-            login()
-        }
-
-        binding.btnMoveDaftar.setOnClickListener {
-            intentActivity(RegisterActivity::class.java)
-        }
 
     }
 
     private fun setData() {
 
-        binding.btnMasuk.setOnClickListener {
-            login()
+        binding.btnDaftar.setOnClickListener {
+            register()
         }
 
     }
 
-    private fun login() {
+    private fun register() {
 
+        if (binding.edtName.isEmpty()) return
         if (binding.edtEmail.isEmpty()) return
+        if (binding.edtUname.isEmpty()) return
         if (binding.edtPassword.isEmpty()) return
 
-        val body = LoginRequest(
+        val body = RegisterRequest(
+            binding.edtName.text.toString(),
             binding.edtEmail.text.toString(),
-            binding.edtEmail.text.toString(),
+            binding.edtUname.text.toString(),
             binding.edtPassword.text.toString()
         )
 
-        viewModel.login(body).observe(this) {
+        viewModel.register(body).observe(this) {
 
             when (it.state) {
                 State.SUCCESS -> {
                     dismisLoading()
                     showToast("Selamat datang " + it.data?.nama)
-                    pushActivity(NavigasiActivity::class.java)
+                    pushActivity(NavigasiActivity::class.java) //push ke halaman LoginActivity
                 }
                 State.ERROR -> {
                     dismisLoading()
@@ -76,23 +67,3 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 }
-
-//    fun testing() {
-//        val s   =   SPrefs(this)
-//        if(s.getIsLogin())  {
-//            binding.tvDaftar.text = "SUDAH LOGIN"
-//        } else
-//            binding.tvDaftar.text =   "BELUM LOGIN"
-//
-//        binding.btnMasuk.setOnClickListener {
-//            s.setIsLogin(true)
-//        }
-//
-//        binding.btnMasuk.setOnClickListener {
-//            s.setIsLogin(false)
-//            onBackPressed()
-//        }
-//
-//        Log.d("RESPON", "PESAN SINGKAT")
-//    }
-

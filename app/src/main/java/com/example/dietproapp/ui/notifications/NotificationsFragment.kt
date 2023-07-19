@@ -11,6 +11,7 @@ import com.example.dietproapp.databinding.FragmentNotificationsBinding
 
 class NotificationsFragment : Fragment() {
 
+    private lateinit var notificationsViewModel: NotificationsViewModel
     private var _binding: FragmentNotificationsBinding? = null
 
     // This property is only valid between onCreateView and
