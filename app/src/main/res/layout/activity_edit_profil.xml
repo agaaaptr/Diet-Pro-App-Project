@@ -6,28 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/_15sdp"
-    tools:context=".ui.editProfil.EditProfilActivity">
+    tools:context=".ui.profil.EditProfilActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-<!--        <com.google.android.material.appbar.AppBarLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@color/white"-->
-<!--            android:fitsSystemWindows="true">-->
-<!--            -->
-<!--            <androidx.appcompat.widget.Toolbar-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:id="@+id/toolbarEdtProfil"-->
-<!--                android:padding="@dimen/_5sdp"-->
-<!--                android:theme="@style/ThemeOverlay.AppCompat.Light"-->
-<!--                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>-->
-<!--            -->
-<!--        </com.google.android.material.appbar.AppBarLayout>-->
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,7 +34,7 @@
             android:clickable="true"
             android:layout_height="@dimen/_20sdp"
             android:layout_alignParentStart="true"
-            android:src="@drawable/ic_back_24"/>
+            android:src="@drawable/back"/>
 
     </RelativeLayout>
 
@@ -84,7 +67,6 @@
                         android:background="@color/secondary"/>
 
                     <ImageView
-                        android:scaleType="centerCrop"
                         android:id="@+id/img_Profil"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"/>
@@ -100,13 +82,14 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_5sdp">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_editpp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cornerRadius="@dimen/_30sdp"
-                    android:text="Change Profile Picture"
+                <Button
                     android:textAllCaps="false"
+                    android:id="@+id/btn_editpp"
+                    android:layout_width="133dp"
+                    android:background="@drawable/bg_textfield"
+                    android:layout_height="23dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Change Profile Picture"
                     android:textSize="8sp"/>
 
             </LinearLayout>
@@ -202,6 +185,7 @@
             android:background="@drawable/bg_textfield"
             android:fontFamily="@font/poppins_regular"
             android:hint="Height"
+            android:inputType="textPassword"
             android:paddingLeft="15dp"
             android:textSize="13sp" />
 
@@ -222,6 +206,7 @@
             android:background="@drawable/bg_textfield"
             android:fontFamily="@font/poppins_regular"
             android:hint="Weight"
+            android:inputType="textPassword"
             android:paddingLeft="15dp"
             android:textSize="13sp" />
 
