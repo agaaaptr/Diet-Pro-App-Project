@@ -5,38 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-<<<<<<< HEAD
-    android:background="@color/background"
     android:padding="@dimen/_15sdp"
     tools:context=".ui.profil.EditProfilActivity">
-=======
-    android:padding="@dimen/_15sdp"
-    tools:context=".ui.editProfil.EditProfilActivity">
->>>>>>> cc676a1 (Backend edit profil + image)
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-<<<<<<< HEAD
-=======
-
-<!--        <com.google.android.material.appbar.AppBarLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@color/white"-->
-<!--            android:fitsSystemWindows="true">-->
-<!--            -->
-<!--            <androidx.appcompat.widget.Toolbar-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:id="@+id/toolbarEdtProfil"-->
-<!--                android:padding="@dimen/_5sdp"-->
-<!--                android:theme="@style/ThemeOverlay.AppCompat.Light"-->
-<!--                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>-->
-<!--            -->
-<!--        </com.google.android.material.appbar.AppBarLayout>-->
-
->>>>>>> cc676a1 (Backend edit profil + image)
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,11 +34,7 @@
             android:clickable="true"
             android:layout_height="@dimen/_20sdp"
             android:layout_alignParentStart="true"
-<<<<<<< HEAD
             android:src="@drawable/back"/>
-=======
-            android:src="@drawable/ic_back_24"/>
->>>>>>> cc676a1 (Backend edit profil + image)
 
     </RelativeLayout>
 
@@ -97,10 +67,6 @@
                         android:background="@color/secondary"/>
 
                     <ImageView
-<<<<<<< HEAD
-=======
-                        android:scaleType="centerCrop"
->>>>>>> cc676a1 (Backend edit profil + image)
                         android:id="@+id/img_Profil"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"/>
@@ -116,26 +82,15 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:paddingVertical="@dimen/_5sdp">
 
-                <com.google.android.material.button.MaterialButton
+                <Button
+                    android:textAllCaps="false"
                     android:id="@+id/btn_editpp"
-<<<<<<< HEAD
-                    android:layout_width="match_parent"
-                    android:layout_height="32dp"
-                    android:backgroundTint="@color/white"
+                    android:layout_width="133dp"
+                    android:background="@drawable/bg_textfield"
+                    android:layout_height="23dp"
                     android:fontFamily="@font/poppins_medium"
                     android:text="Change Profile Picture"
-                    android:textAllCaps="false"
-                    android:textColor="@color/black"
-                    android:textSize="8sp"
-                    app:cornerRadius="@dimen/_360sdp" />
-=======
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cornerRadius="@dimen/_30sdp"
-                    android:text="Change Profile Picture"
-                    android:textAllCaps="false"
                     android:textSize="8sp"/>
->>>>>>> cc676a1 (Backend edit profil + image)
 
             </LinearLayout>
 
@@ -161,15 +116,8 @@
 
         <EditText
             android:id="@+id/edt_name"
-<<<<<<< HEAD
-            android:textColorHint="#808080"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:textColor="@color/black"
-=======
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
->>>>>>> cc676a1 (Backend edit profil + image)
             android:layout_marginBottom="15dp"
             android:background="@drawable/bg_textfield"
             android:fontFamily="@font/poppins_regular"
@@ -195,11 +143,6 @@
             android:background="@drawable/bg_textfield"
             android:fontFamily="@font/poppins_regular"
             android:hint="Email"
-<<<<<<< HEAD
-            android:textColorHint="#808080"
-            android:textColor="@color/black"
-=======
->>>>>>> cc676a1 (Backend edit profil + image)
             android:inputType="textEmailAddress"
             android:paddingLeft="15dp"
             android:textSize="13sp" />
@@ -217,18 +160,10 @@
             android:id="@+id/edt_uname"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-<<<<<<< HEAD
-            android:textColorHint="#808080"
-=======
->>>>>>> cc676a1 (Backend edit profil + image)
             android:layout_marginBottom="15dp"
             android:background="@drawable/bg_textfield"
             android:fontFamily="@font/poppins_regular"
             android:hint="Username"
-<<<<<<< HEAD
-            android:textColor="@color/black"
-=======
->>>>>>> cc676a1 (Backend edit profil + image)
             android:inputType="textPersonName"
             android:paddingLeft="15dp"
             android:textSize="13sp" />
@@ -250,12 +185,7 @@
             android:background="@drawable/bg_textfield"
             android:fontFamily="@font/poppins_regular"
             android:hint="Height"
-<<<<<<< HEAD
-            android:textColorHint="#808080"
-            android:textColor="@color/black"
             android:inputType="textPassword"
-=======
->>>>>>> cc676a1 (Backend edit profil + image)
             android:paddingLeft="15dp"
             android:textSize="13sp" />
 
@@ -276,33 +206,18 @@
             android:background="@drawable/bg_textfield"
             android:fontFamily="@font/poppins_regular"
             android:hint="Weight"
-<<<<<<< HEAD
-            android:textColorHint="#808080"
-            android:textColor="@color/black"
             android:inputType="textPassword"
             android:paddingLeft="15dp"
             android:textSize="13sp" />
 
-        <com.google.android.material.button.MaterialButton
-=======
-            android:paddingLeft="15dp"
-            android:textSize="13sp" />
-
         <Button
->>>>>>> cc676a1 (Backend edit profil + image)
             android:id="@+id/btn_save"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginTop="25dp"
             android:background="@drawable/bg_button"
-<<<<<<< HEAD
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Save"
-            android:textColor="@color/black"
-=======
             android:fontFamily="@font/poppins_medium"
             android:text="Save"
->>>>>>> cc676a1 (Backend edit profil + image)
             android:textAllCaps="false"
             android:textSize="14dp" />
 

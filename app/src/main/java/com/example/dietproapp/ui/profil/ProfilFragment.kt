@@ -38,7 +38,7 @@ class ProfilFragment : Fragment() {
     }
 
     fun mainButton() {
-        binding.btnKeluar.setOnClickListener {
+        binding.imgBack.setOnClickListener {
             SPrefs.isLogin  =   false
             pushActivity(LoginActivity::class.java)
         }
@@ -49,7 +49,7 @@ class ProfilFragment : Fragment() {
         if (user != null) {
             binding.apply {
                 tvNamaProfil.text = user.nama
-                tvEmailProfil.text  = user.email
+                tvTipeakun.text  = user.email
                 tvInisialProfil.text    =   user.nama.getInitial()
             }
         }
