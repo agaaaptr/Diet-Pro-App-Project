@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/background"
+    android:background="@color/background"
     android:orientation="horizontal"
     tools:context=".ui.login.LoginActivity">
 
@@ -50,6 +50,8 @@
                 android:background="@drawable/bg_textfield"
                 android:hint="Your email or username"
                 android:textSize="13sp"
+                android:textColorHint="#808080"
+                android:textColor="@color/black"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="15dp"
                 android:fontFamily="@font/poppins_regular"
@@ -71,7 +73,9 @@
             android:layout_height="57dp"
             android:background="@drawable/bg_textfield"
             android:hint="Your password"
+            android:textColorHint="#808080"
             android:textSize="13sp"
+            android:textColor="@color/black"
             android:inputType="textPassword"
             android:paddingLeft="15dp"
             android:fontFamily="@font/poppins_regular"
@@ -119,6 +123,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_gravity="end"
+                android:textColor="@color/black"
                 android:layout_marginHorizontal="@dimen/_15sdp"
                 android:text="or" />
 
@@ -160,6 +165,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
+                android:textColor="@color/black"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_marginEnd="@dimen/_3sdp"
