@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/background"
     tools:context=".ui.login.OnBoardingActivity">
 
     <LinearLayout
@@ -59,14 +60,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/start_btn"
         android:layout_marginTop="120dp"
         android:layout_width="250dp"
         android:layout_height="45dp"
         android:backgroundTint="@color/secondary"
         android:background="@drawable/bg_button"
-        android:fontFamily="@font/poppins_medium"
+        android:fontFamily="@font/poppins_semibold"
         android:textColor="@color/black"
         android:text="Get Started for Free"
         android:textAllCaps="false"

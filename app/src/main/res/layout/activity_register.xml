@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/background"
     android:orientation="horizontal"
     tools:context=".ui.login.RegisterActivity">
 
@@ -117,11 +118,12 @@
             android:fontFamily="@font/poppins_regular"
             android:id="@+id/edt_password"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_daftar"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
             android:background="@drawable/bg_button"
             android:layout_marginTop="30dp"
             android:text="Register"

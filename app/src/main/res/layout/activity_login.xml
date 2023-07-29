@@ -87,13 +87,15 @@
             android:text="Forgot password?"
             android:textColor="@color/black" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:background="@drawable/bg_button"
             android:layout_marginTop="30dp"
+            android:backgroundTint="@color/secondary"
             android:id="@+id/btn_masuk"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:fontFamily="@font/poppins_medium"
+            android:fontFamily="@font/poppins_semibold"
             android:text="Continue"
             android:textAllCaps="false"
             android:textSize="14sp" />
@@ -130,13 +132,16 @@
 
         </RelativeLayout>
 
-        <Button
-            android:drawableStart="@drawable/ic_google_16"
-            android:paddingStart="100dp"
-            android:paddingEnd="100dp"
-            android:background="@drawable/bg_textfield"
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"
+            app:icon="@drawable/ic_google_24"
+            app:iconTint="@color/secondary"
+            app:iconGravity="start"
+            android:textAlignment="center"
+            app:cornerRadius="@dimen/_360sdp"
+            android:backgroundTint="@color/white"
             android:layout_width="match_parent"
-            android:fontFamily="@font/poppins_medium"
+            android:fontFamily="@font/poppins_semibold"
             android:layout_height="45dp"
             android:text="Sign up with Google"
             android:textAllCaps="false"

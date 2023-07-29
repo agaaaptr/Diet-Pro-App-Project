@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/background"
     android:orientation="vertical"
     android:padding="@dimen/_15sdp"
     tools:context=".ui.profil.ProfilFragment">
