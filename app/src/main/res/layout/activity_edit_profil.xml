@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:backgroundTint="@color/background"
+    android:background="@color/background"
     android:padding="@dimen/_15sdp"
     tools:context=".ui.profil.EditProfilActivity">
 
@@ -119,8 +119,10 @@
 
         <EditText
             android:id="@+id/edt_name"
+            android:textColorHint="#808080"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:textColor="@color/black"
             android:layout_marginBottom="15dp"
             android:background="@drawable/bg_textfield"
             android:fontFamily="@font/poppins_regular"
@@ -146,6 +148,8 @@
             android:background="@drawable/bg_textfield"
             android:fontFamily="@font/poppins_regular"
             android:hint="Email"
+            android:textColorHint="#808080"
+            android:textColor="@color/black"
             android:inputType="textEmailAddress"
             android:paddingLeft="15dp"
             android:textSize="13sp" />
@@ -163,10 +167,12 @@
             android:id="@+id/edt_uname"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:textColorHint="#808080"
             android:layout_marginBottom="15dp"
             android:background="@drawable/bg_textfield"
             android:fontFamily="@font/poppins_regular"
             android:hint="Username"
+            android:textColor="@color/black"
             android:inputType="textPersonName"
             android:paddingLeft="15dp"
             android:textSize="13sp" />
@@ -188,6 +194,8 @@
             android:background="@drawable/bg_textfield"
             android:fontFamily="@font/poppins_regular"
             android:hint="Height"
+            android:textColorHint="#808080"
+            android:textColor="@color/black"
             android:inputType="textPassword"
             android:paddingLeft="15dp"
             android:textSize="13sp" />
@@ -209,6 +217,8 @@
             android:background="@drawable/bg_textfield"
             android:fontFamily="@font/poppins_regular"
             android:hint="Weight"
+            android:textColorHint="#808080"
+            android:textColor="@color/black"
             android:inputType="textPassword"
             android:paddingLeft="15dp"
             android:textSize="13sp" />
