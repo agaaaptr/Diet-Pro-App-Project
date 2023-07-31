@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:backgroundTint="@color/background"
     android:orientation="horizontal"
     tools:context=".ui.login.LoginActivity">
 
@@ -40,8 +40,15 @@
             android:textColor="@color/black"
             android:fontFamily="@font/poppins_semibold"
             android:textSize="15sp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="-10dp"
             android:text="Email or username"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="none"
+            app:placeholderText="dietpro@gmail.com"
+            app:endIconMode="clear_text">
 
             <EditText
                 android:layout_width="match_parent"
@@ -50,12 +57,12 @@
                 android:background="@drawable/bg_textfield"
                 android:hint="Your email or username"
                 android:textSize="13sp"
-                android:textColorHint="#808080"
-                android:textColor="@color/black"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="15dp"
                 android:fontFamily="@font/poppins_regular"
                 android:id="@+id/edt_email"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -64,22 +71,29 @@
             android:textColor="@color/black"
             android:fontFamily="@font/poppins_semibold"
             android:textSize="15sp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="-10dp"
             android:text="Password"/>
 
-
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="57dp"
-            android:background="@drawable/bg_textfield"
-            android:hint="Your password"
-            android:textColorHint="#808080"
-            android:textSize="13sp"
-            android:textColor="@color/black"
-            android:inputType="textPassword"
-            android:paddingLeft="15dp"
-            android:fontFamily="@font/poppins_regular"
-            android:id="@+id/edt_password"/>
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="none"
+            app:counterEnabled="true"
+            app:counterMaxLength="8"
+            app:passwordToggleEnabled="true">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:background="@drawable/bg_textfield"
+                android:hint="Your password"
+                android:textSize="13sp"
+                android:inputType="textPassword"
+                android:paddingLeft="15dp"
+                android:fontFamily="@font/poppins_regular"
+                android:id="@+id/edt_password"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -91,15 +105,14 @@
             android:text="Forgot password?"
             android:textColor="@color/black" />
 
-        <com.google.android.material.button.MaterialButton
+        <Button
+            android:clickable="true"
             android:background="@drawable/bg_button"
             android:layout_marginTop="30dp"
-            android:backgroundTint="@color/secondary"
             android:id="@+id/btn_masuk"
-            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/poppins_medium"
             android:text="Continue"
             android:textAllCaps="false"
             android:textSize="14sp" />
@@ -123,7 +136,6 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_gravity="end"
-                android:textColor="@color/black"
                 android:layout_marginHorizontal="@dimen/_15sdp"
                 android:text="or" />
 
@@ -137,16 +149,13 @@
 
         </RelativeLayout>
 
-        <com.google.android.material.button.MaterialButton
-            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"
-            app:icon="@drawable/ic_google_24"
-            app:iconTint="@color/secondary"
-            app:iconGravity="start"
-            android:textAlignment="center"
-            app:cornerRadius="@dimen/_360sdp"
-            android:backgroundTint="@color/white"
+        <Button
+            android:drawableStart="@drawable/ic_google_16"
+            android:paddingStart="100dp"
+            android:paddingEnd="100dp"
+            android:background="@drawable/bg_textfield"
             android:layout_width="match_parent"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/poppins_medium"
             android:layout_height="45dp"
             android:text="Sign up with Google"
             android:textAllCaps="false"
@@ -165,7 +174,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:textColor="@color/black"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_marginEnd="@dimen/_3sdp"
