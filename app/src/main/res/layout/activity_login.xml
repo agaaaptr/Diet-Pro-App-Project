@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/background"
     android:orientation="horizontal"
     tools:context=".ui.login.LoginActivity">
 
@@ -15,61 +16,106 @@
 
         <ImageView
             android:id="@+id/image_logo"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="65dp"
+            android:layout_height="53dp"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:src="@drawable/dietpro" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="80dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Diet Pro"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:background="@color/white"
-                android:hint="Email or Username"
-                android:inputType="textEmailAddress"
-                android:paddingStart="0dp"
-                android:text="dietproapp@gmail.com" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="15sp"
+            android:layout_marginBottom="-10dp"
+            android:text="Email or username"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:boxBackgroundMode="none"
+            app:placeholderText="dietpro@gmail.com"
+            app:endIconMode="clear_text">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/bg_textfield"
+                android:hint="Your email or username"
+                android:textSize="13sp"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="15dp"
+                android:fontFamily="@font/poppins_regular"
+                android:id="@+id/edt_email"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="15sp"
+            android:layout_marginBottom="-10dp"
+            android:text="Password"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="none"
+            app:counterEnabled="true"
+            app:counterMaxLength="8"
             app:passwordToggleEnabled="true">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_password"
+            <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:background="@color/white"
-                android:hint="Password"
+                android:layout_height="57dp"
+                android:background="@drawable/bg_textfield"
+                android:hint="Your password"
+                android:textSize="13sp"
                 android:inputType="textPassword"
-                android:paddingStart="0dp"
-                android:text="12345678" />
+                android:paddingLeft="15dp"
+                android:fontFamily="@font/poppins_regular"
+                android:id="@+id/edt_password"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="12sp"
             android:layout_gravity="end"
+            android:fontFamily="@font/poppins_regular"
             android:layout_marginVertical="@dimen/_15sdp"
-            android:text="Lupa kata sandi?"
+            android:text="Forgot password?"
             android:textColor="@color/black" />
 
-        <com.google.android.material.button.MaterialButton
+        <Button
+            android:clickable="true"
+            android:background="@drawable/bg_button"
+            android:layout_marginTop="30dp"
             android:id="@+id/btn_masuk"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_45sdp"
-            android:text="Masuk"
+            android:layout_height="45dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Continue"
             android:textAllCaps="false"
-            android:textSize="@dimen/_13ssp" />
+            android:textSize="14sp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -91,7 +137,7 @@
                 android:layout_centerInParent="true"
                 android:layout_gravity="end"
                 android:layout_marginHorizontal="@dimen/_15sdp"
-                android:text="atau masuk dengan" />
+                android:text="or" />
 
             <View
                 android:id="@+id/lineRight"
@@ -103,17 +149,18 @@
 
         </RelativeLayout>
 
-        <com.google.android.material.button.MaterialButton
-            style="@style/Button.OutlineBox"
+        <Button
+            android:drawableStart="@drawable/ic_google_16"
+            android:paddingStart="100dp"
+            android:paddingEnd="100dp"
+            android:background="@drawable/bg_textfield"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_45sdp"
-            android:text="Google"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_height="45dp"
+            android:text="Sign up with Google"
             android:textAllCaps="false"
-            android:textColor="#AAAAAA"
-            android:textSize="@dimen/_13ssp"
-            app:icon="@drawable/google"
-            app:iconSize="@dimen/_19sdp"
-            app:iconTint="@null" />
+            android:textColor="@color/black"
+            android:textSize="12sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -126,14 +173,20 @@
                 android:id="@+id/tvDaftar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppins_regular"
                 android:layout_marginEnd="@dimen/_3sdp"
-                android:text="Belum punya akun?" />
+                android:text="Didn't have an account?" />
 
             <TextView
                 android:id="@+id/btnMove_daftar"
                 android:layout_width="wrap_content"
+                android:layout_marginTop="5dp"
                 android:layout_height="wrap_content"
-                android:text="Daftar"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Register"
                 android:textColor="@color/black" />
 
         </LinearLayout>

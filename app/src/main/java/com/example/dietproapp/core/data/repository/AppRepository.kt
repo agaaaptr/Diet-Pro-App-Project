@@ -5,10 +5,12 @@ import com.example.dietproapp.core.data.source.remote.RemoteDataSource
 import com.example.dietproapp.core.data.source.remote.network.Resource
 import com.example.dietproapp.core.data.source.remote.request.LoginRequest
 import com.example.dietproapp.core.data.source.remote.request.RegisterRequest
+import com.example.dietproapp.core.data.source.remote.request.UpdateRequest
 import com.example.dietproapp.util.SPrefs
 import com.inyongtisto.myhelper.extension.getErrorBody
 import com.inyongtisto.myhelper.extension.logs
 import kotlinx.coroutines.flow.flow
+import okhttp3.MultipartBody
 
 class AppRepository(val local:LocalDataSource, val remote:RemoteDataSource) {
 
@@ -24,7 +26,7 @@ class AppRepository(val local:LocalDataSource, val remote:RemoteDataSource) {
                     emit(Resource.success(user))
                     logs("success" + body.toString())
                 } else {
-                    emit(Resource.error(it.getErrorBody(ErrorCustom::class.java)?.description
+                    emit(Resource.error(it.getErrorBody()?.message
                         ?: "Error Default", null))
                     logs("Error: " + "keterangan error")
                 }
@@ -47,7 +49,7 @@ class AppRepository(val local:LocalDataSource, val remote:RemoteDataSource) {
                     emit(Resource.success(user))
                     logs("success" + body.toString())
                 } else {
-                    emit(Resource.error(it.getErrorBody(ErrorCustom::class.java)?.description
+                    emit(Resource.error(it.getErrorBody()?.message
                         ?: "Error Default", null))
                     logs("Error: " + "keterangan error")
                 }
@@ -58,10 +60,48 @@ class AppRepository(val local:LocalDataSource, val remote:RemoteDataSource) {
         }
     }
 
-    class   ErrorCustom (
-        val ok: Boolean,
-        val error_code: Int,
-        val description: String?    = null
-            )
+    fun updateUser(data: UpdateRequest ) =   flow {
+        emit(Resource.loading(null))
+        try {
+            remote.updateUser(data).let {
+                if (it.isSuccessful) {
+                    val body    =   it.body()
+                    val user    = body?.data
+                    SPrefs.setUser(user) //untuk update data user terbaru
+                    emit(Resource.success(user))
+                } else {
+                    emit(Resource.error(it.getErrorBody()?.message
+                        ?: "Error Default", null))
+                }
+            }
+        } catch (e: Exception) {
+            emit(Resource.error(e.message ?: "Terjadi Kesalahan", null))
+        }
+    }
+
+    fun uploadUser(id: Int? = null, fileImage: MultipartBody.Part? = null) =   flow {
+        emit(Resource.loading(null))
+        try {
+            remote.uploadUser(id, fileImage).let {
+                if (it.isSuccessful) {
+                    val body    =   it.body()
+                    val user    = body?.data
+                    SPrefs.setUser(user) //untuk update data user terbaru
+                    emit(Resource.success(user))
+                } else {
+                    emit(Resource.error(it.getErrorBody()?.message
+                        ?: "Error Default", null))
+                }
+            }
+        } catch (e: Exception) {
+            emit(Resource.error(e.message ?: "Terjadi Kesalahan", null))
+        }
+    }
+
+//    class   ErrorCustom (
+//        val ok: Boolean,
+//        val error_code: Int,
+//        val description: String?    = null
+//            )
 
 }

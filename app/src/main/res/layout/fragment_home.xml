@@ -36,9 +36,10 @@
                         android:textSize="@dimen/_22ssp"
                         android:textStyle="bold"
                         android:text="AL"
-                        android:background="@color/colorPrimary"/>
+                        android:background="@color/secondary"/>
 
                     <ImageView
+                        android:scaleType="centerCrop"
                         android:id="@+id/img_Profil"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"/>
