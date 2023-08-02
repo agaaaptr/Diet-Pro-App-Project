@@ -39,8 +39,8 @@ class HomeFragment : Fragment() {
         val user = SPrefs.getUser()
         if (user != null) {
             binding.apply {
-                tvNamaProfil.text = user.nama
-                tvEmailProfil.text  = user.email
+                tvUsername.text = user.nama
+                tvTipeakun.text  = user.email
                 tvInisialProfil.text    =   user.nama.getInitial()
 
                 Picasso.get().load(Constants.USER_URL +user.foto_profil).into(binding.imgProfil)

@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:padding="@dimen/_15sdp"
     tools:context=".ui.profil.ProfilFragment">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
