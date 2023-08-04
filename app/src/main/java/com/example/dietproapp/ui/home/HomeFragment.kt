@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.dietproapp.databinding.FragmentHomeBinding
+import com.example.dietproapp.ui.profil.ProfilActivity
 import com.example.dietproapp.util.Constants
 import com.example.dietproapp.util.SPrefs
 import com.inyongtisto.myhelper.extension.getInitial
+import com.inyongtisto.myhelper.extension.intentActivity
 import com.squareup.picasso.Picasso
 
 class HomeFragment : Fragment() {
@@ -32,7 +34,16 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         setUser()
+        mainButton()
         return root
+    }
+
+    private fun mainButton() {
+
+        binding.profile.setOnClickListener {
+            intentActivity(ProfilActivity::class.java)
+        }
+
     }
 
     private fun setUser()   {

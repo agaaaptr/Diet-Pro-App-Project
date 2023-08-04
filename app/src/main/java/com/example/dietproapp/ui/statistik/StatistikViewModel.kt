@@ -1,12 +1,13 @@
-package com.example.dietproapp.ui.profil
+package com.example.dietproapp.ui.statistik
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ProfilViewModel : ViewModel() {
+class StatistikViewModel : ViewModel() {
+
     private val _text = MutableLiveData<String>().apply {
-        value = "This is profil Fragment"
+        value = "This is statistik Fragment"
     }
     val text: LiveData<String> = _text
 }

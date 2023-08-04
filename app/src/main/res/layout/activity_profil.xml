@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/_15sdp"
-    tools:context=".ui.profil.ProfilFragment">
+    tools:context=".ui.profil.ProfilActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -45,8 +45,6 @@
             android:layout_alignParentEnd="true"
             android:src="@drawable/ic_baseline_edit_24"/>
     </RelativeLayout>
-
-
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -1,43 +1,30 @@
 package com.example.dietproapp.ui.profil
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.example.dietproapp.databinding.FragmentProfilBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.example.dietproapp.databinding.ActivityProfilBinding
 import com.example.dietproapp.ui.editProfil.EditProfilActivity
 import com.example.dietproapp.ui.login.LoginActivity
-import com.example.dietproapp.util.Constants.USER_URL
+import com.example.dietproapp.util.Constants
 import com.example.dietproapp.util.SPrefs
 import com.inyongtisto.myhelper.extension.getInitial
 import com.inyongtisto.myhelper.extension.intentActivity
 import com.inyongtisto.myhelper.extension.pushActivity
 import com.squareup.picasso.Picasso
 
-class ProfilFragment : Fragment() {
+class ProfilActivity : AppCompatActivity() {
 
-    private lateinit var profilViewModel: ProfilViewModel
-    private var _binding: FragmentProfilBinding? = null
+//    private val viewModel: AuthViewModel by viewModel()
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private var _binding: ActivityProfilBinding?  =   null
+    private val binding get()   =   _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val profilViewModel =
-            ViewModelProvider(this).get(ProfilViewModel::class.java)
-
-        _binding = FragmentProfilBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        _binding = ActivityProfilBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         mainButton()
-        return root
     }
 
     override fun onResume() {
@@ -70,14 +57,14 @@ class ProfilFragment : Fragment() {
                 edtWeight.setText(user.berat_badan)
                 tvInisialProfil.text    =   user.nama.getInitial()
 
-                Picasso.get().load(USER_URL+user.foto_profil).into(binding.imgProfil)
+                Picasso.get().load(Constants.USER_URL +user.foto_profil).into(binding.imgProfil)
             }
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+//    override fun onDestroyView() {
+//        super.onDestroyView()
+//        _binding = null
+//    }
 
 }
