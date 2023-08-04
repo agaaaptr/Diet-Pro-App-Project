@@ -12,21 +12,27 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/navigation_order"
+        android:name="com.example.dietproapp.ui.order.OrderFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.dietproapp.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:name="com.example.dietproapp.ui.statistik.StatistikFragment"
+        android:label="@string/title_statistik"
+        tools:layout="@layout/fragment_statistik" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.dietproapp.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:name="com.example.dietproapp.ui.konsultasi.KonsultasiFragment"
+        android:label="@string/title_konsultasi"
+        tools:layout="@layout/fragment_konsultasi" />
 
     <fragment
         android:id="@+id/navigation_profil"
-        android:name="com.example.dietproapp.ui.profil.ProfilFragment"
-        android:label="@string/title_profil"
-        tools:layout="@layout/fragment_profil" />
+        android:name="com.example.dietproapp.ui.chat.ChatFragment"
+        android:label="@string/title_chat"
+        tools:layout="@layout/fragment_chat" />
 
 </navigation>
