@@ -135,7 +135,7 @@
             android:fontFamily="@font/poppins_medium"
             android:background="@drawable/bg_button"
             android:layout_marginTop="30dp"
-            android:text="Register"
+            android:text="Continue"
             android:textAllCaps="false"
             android:textSize="14dp" />
 

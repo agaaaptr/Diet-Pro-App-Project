@@ -7,5 +7,9 @@ data class UpdateRequest(
     val username:   String? = null,
     val berat_badan: String? = null,
     val tinggi_badan: String? = null,
-    val usia: String? = null
+    val usia: String? = null,
+    val jenis_kelamin: String? = null,
+    val aktivitas: String? = null,
+    val kebutuhan_kalori: String? = null
+
 )

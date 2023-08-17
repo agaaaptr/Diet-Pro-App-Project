@@ -6,7 +6,7 @@ data class User(
     val email: String?,
     val foto_profil: String?,
     val id: Int?,
-    val kebutuhan_kalori: Any?,
+    val kebutuhan_kalori: String?,
     val nama: String?,
     val role: String?,
     val tinggi_badan: String?,

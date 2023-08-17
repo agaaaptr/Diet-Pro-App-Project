@@ -6,10 +6,7 @@ import com.example.dietproapp.NavigasiActivity
 import com.example.dietproapp.core.data.source.remote.network.State
 import com.example.dietproapp.core.data.source.remote.request.RegisterRequest
 import com.example.dietproapp.databinding.ActivityRegisterBinding
-import com.inyongtisto.myhelper.extension.isEmpty
-import com.inyongtisto.myhelper.extension.pushActivity
-import com.inyongtisto.myhelper.extension.showToast
-import com.inyongtisto.myhelper.extension.toastError
+import com.inyongtisto.myhelper.extension.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RegisterActivity : AppCompatActivity() {
@@ -24,6 +21,14 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setData()
+        mainButton()
+    }
+
+    private fun mainButton() {
+
+        binding.btnMoveLogin.setOnClickListener {
+            intentActivity(LoginActivity::class.java)
+        }
 
     }
 
@@ -54,7 +59,7 @@ class RegisterActivity : AppCompatActivity() {
             when (it.state) {
                 State.SUCCESS -> {
 //                    dismisLoading()
-                    showToast("Selamat datang " + it.data?.nama)
+                    showToast("Selamat" + it.data?.nama + "lanjut langkah berikutnya")
                     pushActivity(NavigasiActivity::class.java) //push ke halaman LoginActivity
                 }
                 State.ERROR -> {

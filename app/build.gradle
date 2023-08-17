@@ -84,4 +84,7 @@ dependencies {
 
     // display image
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //slider
+    implementation("com.tbuonomo:dotsindicator:4.3")
 }

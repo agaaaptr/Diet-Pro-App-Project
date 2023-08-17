@@ -6,6 +6,7 @@ import com.example.dietproapp.NavigasiActivity
 import com.example.dietproapp.core.data.source.remote.network.State
 import com.example.dietproapp.core.data.source.remote.request.LoginRequest
 import com.example.dietproapp.databinding.ActivityLoginBinding
+import com.example.dietproapp.util.SPrefs
 import com.inyongtisto.myhelper.extension.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -20,6 +21,12 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        if (SPrefs.isLogin) {
+            // Pengguna sudah login sebelumnya, langsung arahkan ke NavigasiActivity
+            pushActivity(NavigasiActivity::class.java)
+            finish()
+        }
 
         setData()
         mainButton()
@@ -61,7 +68,10 @@ class LoginActivity : AppCompatActivity() {
                 State.SUCCESS -> {
 //                    dismisLoading()
                     showToast("Selamat datang " + it.data?.nama)
+                    SPrefs.isLogin  =   true
+                    SPrefs.setUser(it.data)
                     pushActivity(NavigasiActivity::class.java)
+                    finish()
                 }
                 State.ERROR -> {
 //                    dismisLoading()
