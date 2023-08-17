@@ -8,6 +8,11 @@
     android:backgroundTint="@color/background"
     tools:context=".ui.home.HomeFragment">
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <FrameLayout
         android:id="@+id/fl"
         android:layout_width="match_parent"
@@ -184,14 +189,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_progbar"
                 android:secondaryProgressTint="@color/secondary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_kalori"
-                tools:layout_editor_absoluteX="20dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"/>
+                app:layout_constraintVertical_bias="0.0"
+                tools:layout_editor_absoluteX="20dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -438,6 +442,8 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </RelativeLayout>
 

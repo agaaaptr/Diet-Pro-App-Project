@@ -12,17 +12,17 @@
         android:title="@string/title_order" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_statistik"
         android:icon="@drawable/statistik"
         android:title="@string/title_statistik" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_konsultasi"
         android:icon="@drawable/konsultasi_ic"
         android:title="@string/title_konsultasi" />
 
     <item
-        android:id="@+id/navigation_profil"
+        android:id="@+id/navigation_chat"
         android:icon="@drawable/chat"
         android:title="@string/title_chat" />
 
