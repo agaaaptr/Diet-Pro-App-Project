@@ -2,10 +2,10 @@ package com.example.dietproapp.ui.login
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.dietproapp.NavigasiActivity
 import com.example.dietproapp.core.data.source.remote.network.State
 import com.example.dietproapp.core.data.source.remote.request.RegisterRequest
 import com.example.dietproapp.databinding.ActivityRegisterBinding
+import com.example.dietproapp.ui.obslide.OnBoardingFragment
 import com.inyongtisto.myhelper.extension.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -59,8 +59,8 @@ class RegisterActivity : AppCompatActivity() {
             when (it.state) {
                 State.SUCCESS -> {
 //                    dismisLoading()
-                    showToast("Selamat" + it.data?.nama + "lanjut langkah berikutnya")
-                    pushActivity(NavigasiActivity::class.java) //push ke halaman LoginActivity
+                    showToast("Selamat " + it.data?.nama + " lanjut langkah berikutnya")
+                    pushActivity(OnBoardingFragment::class.java) //push ke halaman LoginActivity
                 }
                 State.ERROR -> {
 //                    dismisLoading()

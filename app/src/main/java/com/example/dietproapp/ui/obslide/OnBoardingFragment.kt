@@ -1,43 +1,40 @@
 package com.example.dietproapp.ui.obslide
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.dietproapp.databinding.FragmentOnBoardingBinding
 import com.example.dietproapp.ui.obslide.screen.FirstScreen
 import com.example.dietproapp.ui.obslide.screen.SecondScreen
 import com.example.dietproapp.ui.obslide.screen.ThirdScreen
 
-class OnBoardingFragment : Fragment() {
+class OnBoardingFragment : AppCompatActivity() {
 
     private lateinit var binding: FragmentOnBoardingBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View {
-        // Inflate the layout for this fragment
-        binding = FragmentOnBoardingBinding.inflate(inflater, container, false)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
+        binding = FragmentOnBoardingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val fragmentList = arrayListOf(
+        val fragmentList = arrayListOf<Fragment>(
             FirstScreen(),
             SecondScreen(),
-            ThirdScreen()
+            ThirdScreen(),
+            // tambahkan fragment onboarding lainnya
         )
 
         val adapter = ViewPagerAdapter(
             fragmentList,
-            requireActivity().supportFragmentManager,
+            supportFragmentManager,
             lifecycle
         )
 
-        binding.obsViewPager.adapter = adapter
-        binding.dotsIndicator.attachTo(binding.obsViewPager)
+        val viewPager = binding.obsViewPager
+        viewPager.adapter = adapter
 
-        return binding.root
     }
-
 }
+
+

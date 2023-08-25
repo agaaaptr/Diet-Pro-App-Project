@@ -12,5 +12,7 @@ data class User(
     val tinggi_badan: String?,
     val updated_at: String?,
     val username: String?,
+    val jenis_kelamin: String?,
+    val aktivitas: String?,
     val usia: String?
 )

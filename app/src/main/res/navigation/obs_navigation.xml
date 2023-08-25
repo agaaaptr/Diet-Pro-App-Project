@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/onboarding_navigation"
+    app:startDestination="@+id/fscreen">
+
+    <fragment
+        android:id="@+id/fscreen"
+        android:name="com.example.dietproapp.ui.obslide.screen.FirstScreen"
+        tools:layout="@layout/first_screen" />
+
+    <fragment
+        android:id="@+id/sscreen"
+        android:name="com.example.dietproapp.ui.obslide.screen.SecondScreen"
+        tools:layout="@layout/second_screen" />
+
+    <fragment
+        android:id="@+id/tscreen"
+        android:name="com.example.dietproapp.ui.obslide.screen.ThirdScreen"
+        tools:layout="@layout/third_screen"/>
+
+</navigation>
