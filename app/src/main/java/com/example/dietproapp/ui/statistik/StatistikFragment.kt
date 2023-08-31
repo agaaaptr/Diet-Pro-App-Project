@@ -1,62 +1,35 @@
 package com.example.dietproapp.ui.statistik
 
+import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.example.dietproapp.databinding.FragmentStatistikBinding
+import android.widget.ArrayAdapter
+import com.example.dietproapp.R
 
 class StatistikFragment : Fragment() {
 
-    private lateinit var viewModel: StatistikViewModel
-    private var _binding: FragmentStatistikBinding? = null
-    private val binding get() = _binding!!
+    companion object {
+        fun newInstance() = StatistikFragment()
+    }
 
-    private lateinit var swipeRefreshLayout: SwipeRefreshLayout
+    private lateinit var viewModel: StatistikViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        val statistikViewModel =
-            ViewModelProvider(this).get(StatistikViewModel::class.java)
+    ): View? {
 
-        _binding = FragmentStatistikBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        swipeRefreshLayout = binding.swipeRefreshLayout
-        swipeRefreshLayout.setOnRefreshListener {
-            // Panggil fungsi untuk melakukan refresh data di sini
-            refreshData()
-        }
-
-        setUser()
-        return root
+        return inflater.inflate(R.layout.fragment_statistik, container, false)
     }
 
-    private fun refreshData() {
-        // Sebagai contoh, kita akan memanggil kembali fungsi setUser()
-        setUser()
-        // Selesai melakukan refresh, beritahu SwipeRefreshLayout bahwa proses refresh sudah selesai
-        swipeRefreshLayout.isRefreshing = false
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(StatistikViewModel::class.java)
+        // TODO: Use the ViewModel
     }
 
-    private fun setUser() {
 
-        val statistikViewModel = ViewModelProvider(this).get(StatistikViewModel::class.java)
-
-        val textView: TextView = binding.textStatistik
-        statistikViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-    }
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 }
