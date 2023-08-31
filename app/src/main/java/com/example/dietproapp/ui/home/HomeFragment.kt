@@ -13,7 +13,7 @@ import com.example.dietproapp.util.Constants
 import com.example.dietproapp.util.SPrefs
 import com.inyongtisto.myhelper.extension.getInitial
 import com.inyongtisto.myhelper.extension.intentActivity
-//import com.squareup.picasso.Picasso
+import com.squareup.picasso.Picasso
 
 class HomeFragment : Fragment() {
 
@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        //swipeRefreshLayout = binding.swipeRefreshLayout
+        swipeRefreshLayout = binding.refresh
         swipeRefreshLayout.setOnRefreshListener {
             // Panggil fungsi untuk melakukan refresh data di sini
             refreshData()
@@ -86,7 +86,7 @@ class HomeFragment : Fragment() {
                 progressBar.max = targetKaloriInt
                 progressBar.progress = currentProgress
 
-                //Picasso.get().load(Constants.USER_URL + user.foto_profil).into(binding.imgProfil)
+                Picasso.get().load(Constants.USER_URL + user.foto_profil).into(binding.imgProfil)
             }
         }
     }
