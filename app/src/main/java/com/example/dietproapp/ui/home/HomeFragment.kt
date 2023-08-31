@@ -66,7 +66,14 @@ class HomeFragment : Fragment() {
                 tvInisialProfil.text = user.nama.getInitial()
 
                 val targetKalori = user.kebutuhan_kalori
-                tvTrackingKalori.text = targetKalori
+//                tvTrackingKalori.text = targetKalori
+
+                if (targetKalori != null) {
+                    tvTrackingKalori.text = targetKalori
+                } else {
+                    tvTrackingKalori.text = "Data belum lengkap!"
+                }
+
                 val coba = 2000
 
                 val targetKaloriInt = targetKalori?.toIntOrNull() ?: 0
