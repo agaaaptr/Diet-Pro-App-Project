@@ -1,6 +1,7 @@
 package com.example.dietproapp.core.data.source.remote
 
 import com.example.dietproapp.core.data.source.remote.network.ApiService
+import com.example.dietproapp.core.data.source.remote.request.LaporanMakananRequest
 import com.example.dietproapp.core.data.source.remote.request.LoginRequest
 import com.example.dietproapp.core.data.source.remote.request.RegisterRequest
 import com.example.dietproapp.core.data.source.remote.request.UpdateRequest
@@ -13,4 +14,5 @@ class RemoteDataSource(private val api: ApiService) {
     suspend fun updateUser(data: UpdateRequest) = api.updateUser(data.id, data)
     suspend fun uploadUser(id: Int? = null, fileImage: MultipartBody.Part? = null) = api.uploadUser(id, fileImage)
 
+    suspend fun laporan(lapor: LaporanMakananRequest) = api.laporan(lapor.id_user,lapor)
 }
