@@ -1,6 +1,5 @@
 package com.example.dietproapp.core.data.source.remote.network
 
-import com.example.dietproapp.core.data.source.remote.request.LaporanMakananRequest
 import com.example.dietproapp.core.data.source.remote.request.LoginRequest
 import com.example.dietproapp.core.data.source.remote.request.RegisterRequest
 import com.example.dietproapp.core.data.source.remote.request.UpdateRequest
@@ -36,10 +35,10 @@ interface ApiService {
         @Body data: MultipartBody.Part? = null
     ):  Response<LoginResponse>
 
-    @POST("laporan/{id}")
-    suspend fun laporan   (
-        @Path("id_user") int: Int? = null,
-        @Body  lapor: LaporanMakananRequest
-    ):  Response<LoginResponse>
+//    @POST("laporan/{id}")
+//    suspend fun laporan   (
+//        @Path("id") int: LaporanMakananRequest,
+//        @Body data: LaporanMakananRequest
+//    ):  Response<BaseSingelResponse<LaporResponse>>
 
 }

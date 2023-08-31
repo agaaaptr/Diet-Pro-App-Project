@@ -3,13 +3,13 @@ package com.example.dietproapp.core.data.repository
 import com.example.dietproapp.core.data.source.local.LocalDataSource
 import com.example.dietproapp.core.data.source.remote.RemoteDataSource
 import com.example.dietproapp.core.data.source.remote.network.Resource
-import com.example.dietproapp.core.data.source.remote.request.LaporanMakananRequest
 import com.example.dietproapp.core.data.source.remote.request.LoginRequest
 import com.example.dietproapp.core.data.source.remote.request.RegisterRequest
 import com.example.dietproapp.core.data.source.remote.request.UpdateRequest
 import com.example.dietproapp.util.SPrefs
 import com.inyongtisto.myhelper.extension.getErrorBody
 import com.inyongtisto.myhelper.extension.logs
+import com.inyongtisto.myhelper.extension.toJson
 import kotlinx.coroutines.flow.flow
 import okhttp3.MultipartBody
 
@@ -23,6 +23,7 @@ class AppRepository(val local:LocalDataSource, val remote:RemoteDataSource) {
                     SPrefs.isLogin = true
                     val body = it.body()
                     val user = body?.data
+                    logs("user:" + user.toJson())
                     SPrefs.setUser(user)
                     emit(Resource.success(user))
                     logs("success" + body.toString())
@@ -89,25 +90,6 @@ class AppRepository(val local:LocalDataSource, val remote:RemoteDataSource) {
                     val user    = body?.data
                     SPrefs.setUser(user) //untuk update data user terbaru
                     emit(Resource.success(user))
-                } else {
-                    emit(Resource.error(it.getErrorBody()?.message
-                        ?: "Error Default", null))
-                }
-            }
-        } catch (e: Exception) {
-            emit(Resource.error(e.message ?: "Terjadi Kesalahan", null))
-        }
-    }
-
-    fun laporan(data: LaporanMakananRequest) =   flow {
-        emit(Resource.loading(null))
-        try {
-            remote.laporan(data).let {
-                if (it.isSuccessful) {
-                    val body    =   it.body()
-                    val lapor    = body?.lapor
-                    SPrefs.setLapor(lapor) //untuk update data user terbaru
-                    emit(Resource.success(lapor))
                 } else {
                     emit(Resource.error(it.getErrorBody()?.message
                         ?: "Error Default", null))

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -25,7 +26,6 @@ class StatistikFragment : Fragment() {
         val statistikViewModel =
             ViewModelProvider(this).get(StatistikViewModel::class.java)
 
-        viewModel = ViewModelProvider(this).get(StatistikViewModel::class.java)
         _binding = FragmentStatistikBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
@@ -47,13 +47,14 @@ class StatistikFragment : Fragment() {
     }
 
     private fun setUser() {
-        viewModel.laporData.observe(viewLifecycleOwner) { laporan ->
-            if (laporan != null) {
-                binding.textStatistik.text = laporan.kalori
-            }
+
+        val statistikViewModel = ViewModelProvider(this).get(StatistikViewModel::class.java)
+
+        val textView: TextView = binding.textStatistik
+        statistikViewModel.text.observe(viewLifecycleOwner) {
+            textView.text = it
         }
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
