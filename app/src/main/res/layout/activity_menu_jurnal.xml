@@ -140,7 +140,7 @@
 
 
                 <LinearLayout
-                    android:id="@+id/linearLayout11"
+                    android:id="@+id/linearLayout41"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -164,7 +164,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/linearLayout11"
+                    app:layout_constraintStart_toEndOf="@+id/linearLayout41"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView

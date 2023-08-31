@@ -34,7 +34,7 @@
             android:clickable="true"
             android:layout_height="@dimen/_20sdp"
             android:layout_alignParentStart="true"
-            android:src="@drawable/ic_back_24"/>
+            android:src="@drawable/back"/>
 
         <ImageView
             style="@style/image_clickable"
