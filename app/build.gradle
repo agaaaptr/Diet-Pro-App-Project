@@ -91,6 +91,9 @@ dependencies {
     // display image
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-    //slider
+    // slider
     implementation("com.tbuonomo:dotsindicator:4.3")
+
+    // bar chart
+    implementation 'com.diogobernardino:williamchart:3.10.1'
 }
