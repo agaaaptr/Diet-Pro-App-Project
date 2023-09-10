@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_jurnal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="5dp"
+    android:elevation="2dp"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/csLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout1"
+            tools:ignore="MissingConstraints">
+
+
+            <TextView
+                android:id="@+id/namaBahan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Nasi"
+                android:textColor="@color/primary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout1"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Energi (Kkal)"
+                android:textColor="@color/secondary"
+                android:textSize="10sp" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text=":"
+                android:textColor="@color/secondary"
+                android:layout_marginStart="5dp"
+                android:textSize="10sp" />
+
+
+            <TextView
+                android:id="@+id/EnKkal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="180"
+                android:textColor="@color/secondary"
+                android:layout_marginStart="5dp"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout1"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Protein (g)"
+                android:textSize="10sp" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text=":"
+                android:layout_marginStart="14dp"
+                android:textSize="10sp" />
+
+
+            <TextView
+                android:id="@+id/protein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="3,0"
+                android:layout_marginStart="5dp"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/linearLayout5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout1"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Lemak (g)"
+                android:textSize="10sp" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text=":"
+                android:layout_marginStart="16dp"
+                android:textSize="10sp" />
+
+
+            <TextView
+                android:id="@+id/lemak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="0,3"
+                android:layout_marginStart="5dp"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/linearLayout6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout1"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+            tools:ignore="UnknownId">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="KH (g)"
+                android:textSize="10sp" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text=":"
+                android:layout_marginStart="35dp"
+                android:textSize="10sp" />
+
+
+            <TextView
+                android:id="@+id/Kh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="39,8"
+                android:layout_marginStart="5dp"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/linearLayout7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Serat (g)"
+                android:textSize="10sp" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text=":"
+                android:layout_marginStart="28dp"
+                android:textSize="10sp" />
+
+
+            <TextView
+                android:id="@+id/serat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="0,2"
+                android:layout_marginStart="5dp"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/linearLayout8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="22dp"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Natrium (mg)"
+                android:textSize="10sp" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text=":"
+                android:layout_marginStart="4dp"
+                android:textSize="10sp" />
+
+
+            <TextView
+                android:id="@+id/natrium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="1"
+                android:layout_marginStart="5dp"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/linearLayout9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Kalium (mg)"
+                android:textSize="10sp" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text=":"
+                android:layout_marginStart="10dp"
+                android:textSize="10sp" />
+
+
+            <TextView
+                android:id="@+id/kalium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="38,0"
+                android:layout_marginStart="5dp"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cbMakanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/secondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteX="282dp"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

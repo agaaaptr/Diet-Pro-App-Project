@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.obslide.screen.SecondScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/_15sdp">
+
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:src="@drawable/back"
+        android:layout_gravity="start"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Tambahkan berat dan tinggi badan anda"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Agar kami lebih mengetahui tentang diri anda."
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="15sp"
+        android:layout_marginBottom="5dp"
+        android:text="Berat Badan (kg)"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="#808080"
+        android:background="@drawable/bg_textfield"
+        android:hint="Berat badan anda (contoh: 57)"
+        android:inputType="number"
+        android:textSize="13sp"
+        android:paddingLeft="15dp"
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/edt_bb"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="15sp"
+        android:layout_marginBottom="5dp"
+        android:text="Tinggi Badan (cm)"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="#808080"
+        android:background="@drawable/bg_textfield"
+        android:hint="Tinggi badan anda (contoh: 171)"
+        android:inputType="number"
+        android:textSize="13sp"
+        android:paddingLeft="15dp"
+        android:fontFamily="@font/poppins_regular"
+        android:id="@+id/edt_tb"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_semibold"
+        android:background="@drawable/bg_button"
+        android:layout_marginTop="15dp"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textSize="14dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

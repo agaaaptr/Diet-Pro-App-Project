@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="horizontal"
+    tools:context=".ui.login.RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/_15sdp">
+
+        <ImageView
+            android:id="@+id/image_logo"
+            android:layout_width="65dp"
+            android:layout_height="53dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/dietpro" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Diet Pro"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="15sp"
+            android:layout_marginBottom="5dp"
+            android:text="Full name"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:background="@drawable/bg_textfield"
+            android:hint="Your full name"
+            android:inputType="textPersonName"
+            android:textSize="13sp"
+            android:paddingLeft="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/edt_name"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="15sp"
+            android:layout_marginBottom="5dp"
+            android:text="Email"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_marginBottom="15dp"
+            android:textColorHint="#808080"
+            android:background="@drawable/bg_textfield"
+            android:hint="Your email"
+            android:textColor="@color/black"
+            android:inputType="textEmailAddress"
+            android:textSize="13sp"
+            android:paddingLeft="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/edt_email"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="15sp"
+            android:layout_marginBottom="5dp"
+            android:text="Username"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_marginBottom="15dp"
+            android:textColorHint="#808080"
+            android:background="@drawable/bg_textfield"
+            android:hint="Your username"
+            android:textColor="@color/black"
+            android:inputType="textPersonName"
+            android:textSize="13sp"
+            android:paddingLeft="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/edt_uname"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="15sp"
+            android:layout_marginBottom="5dp"
+            android:text="Password"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bg_textfield"
+            android:hint="Your Password"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:textColorHint="#808080"
+            android:paddingLeft="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/edt_password"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_daftar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            android:background="@drawable/bg_button"
+            android:layout_marginTop="30dp"
+            android:text="Register"
+            android:textAllCaps="false"
+            android:textSize="14dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:text="Already have an account?" />
+
+            <TextView
+                android:id="@+id/btnMove_login"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Login"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <!--LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:text="Dengan mendaftar, saya menyetujui" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Syarat dan"
+                    android:textColor="@color/colorPrimary" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ketentuan "
+                    android:textColor="@color/colorPrimary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:text="serta" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kebijakan Privasi"
+                    android:textColor="@color/colorPrimary" />
+
+            </LinearLayout>
+
+
+        </LinearLayout-->
+
+
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/pd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>
