@@ -169,18 +169,46 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_nutrisi" />
 
                 <TextView
+                    android:id="@+id/tv_tracking_kalori_max"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/progressBar"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/split"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="/"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/progressBar"
+                    app:layout_constraintEnd_toStartOf="@id/tv_tracking_kalori_max" />
+
+                <TextView
                     android:id="@+id/tv_tracking_kalori"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="8dp"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="2.200/2.200"
+                    android:text="0"
                     android:textColor="@color/white"
-                    android:layout_marginBottom="10dp"
-                    android:textSize="10sp"
+                    android:textSize="14sp"
                     app:layout_constraintBottom_toTopOf="@+id/progressBar"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    app:layout_constraintEnd_toStartOf="@id/split" />
 
                 <ProgressBar
                     android:id="@+id/progressBar"
