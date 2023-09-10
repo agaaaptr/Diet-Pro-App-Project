@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.example.dietproapp.R
 import com.example.dietproapp.databinding.FragmentHomeBinding
 import com.example.dietproapp.ui.profil.ProfilActivity
 import com.example.dietproapp.util.Constants
@@ -27,6 +29,12 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        val statusBarColor = ContextCompat.getColor(requireContext(), R.color.primary)
+        activity?.window?.statusBarColor = statusBarColor
+
+        val lightStatusIcons = true // Set this to true for light icons, false for dark icons
+
+
         val homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
 

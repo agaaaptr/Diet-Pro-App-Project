@@ -24,6 +24,8 @@ class ProfilActivity : AppCompatActivity() {
         _binding = ActivityProfilBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val lightStatusIcons = false // Set this to true for light icons, false for dark icons
+
         mainButton()
     }
 

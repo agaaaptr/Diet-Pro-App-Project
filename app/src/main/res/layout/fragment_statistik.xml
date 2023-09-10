@@ -12,11 +12,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="684dp">
+        android:layout_marginEnd="20dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -38,22 +36,26 @@
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
-            app:boxCornerRadiusBottomStart="@dimen/_10sdp"
-            app:boxCornerRadiusTopEnd="@dimen/_10sdp"
-            app:boxCornerRadiusTopStart="@dimen/_10sdp"
+            app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+            app:boxCornerRadiusTopStart="@dimen/_15sdp"
             android:layout_width="match_parent"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
             android:layout_height="wrap_content"
             android:hint="Hari ini"
-            android:backgroundTint="@color/secondary">
+            app:boxBackgroundColor="@color/secondary">
 
             <AutoCompleteTextView
                 android:id="@+id/dd_opsihari"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none" />
+                android:inputType="none"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_medium"
+                android:backgroundTint="@color/secondary"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -136,16 +138,16 @@
         <TextView
 
             android:layout_width="wrap_content"
+            android:id="@+id/text_target"
             android:layout_height="wrap_content"
-            android:layout_marginTop="85dp"
-            android:layout_marginEnd="340dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="Target:"
+            android:layout_marginStart="15dp"
             android:textColor="@color/black"
             android:textSize="10sp"
 
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rataRata"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -153,15 +155,14 @@
             android:id="@+id/target"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="85dp"
-            android:layout_marginEnd="309dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="0kkal"
             android:textColor="@color/black"
             android:textSize="10sp"
+            android:layout_marginStart="15dp"
 
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/text_target"
+            app:layout_constraintTop_toBottomOf="@id/rataRata"
             tools:ignore="MissingConstraints" />
 
 
@@ -171,12 +172,12 @@
         android:layout_width="match_parent"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_height="290dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="290dp"
         android:elevation="5dp"
         android:background="@drawable/bg_statistikgraph">
 
-        <!--<TextView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
@@ -237,29 +238,8 @@
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />-->
+            tools:ignore="MissingConstraints" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="This feature is under development"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="15dp"/>
-
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/maintenance"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.688" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

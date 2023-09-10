@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.core.content.ContextCompat
 import com.example.dietproapp.R
 
 class StatistikFragment : Fragment() {
@@ -21,6 +22,12 @@ class StatistikFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val statusBarColor = ContextCompat.getColor(requireContext(), R.color.background)
+        activity?.window?.statusBarColor = statusBarColor
+        val rootView = inflater.inflate(R.layout.fragment_statistik, container, false)
+
+        // Set the status bar icons to black (light status bar)
+        activity?.window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 
         return inflater.inflate(R.layout.fragment_statistik, container, false)
     }

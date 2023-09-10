@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 
 class OrderViewModel : ViewModel() {
     private val _text = MutableLiveData<String>().apply {
-        value = "This is order Fragment"
+        value = "This page is under development"
     }
     val text: LiveData<String> = _text
 }

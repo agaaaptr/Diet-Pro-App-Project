@@ -6,6 +6,8 @@
     android:padding="20dp"
     android:ellipsize="end"
     android:maxLines="1"
+    android:fontFamily="@font/poppins_regular"
+    android:backgroundTint="@color/secondary"
     android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1">
 
 </TextView>

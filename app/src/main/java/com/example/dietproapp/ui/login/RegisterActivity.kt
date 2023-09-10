@@ -2,6 +2,8 @@ package com.example.dietproapp.ui.login
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import com.example.dietproapp.R
 import com.example.dietproapp.core.data.source.remote.network.State
 import com.example.dietproapp.core.data.source.remote.request.RegisterRequest
 import com.example.dietproapp.databinding.ActivityRegisterBinding
@@ -19,6 +21,9 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val statusBarColor = ContextCompat.getColor(this, R.color.background)
+        window.statusBarColor = statusBarColor
 
         setData()
         mainButton()

@@ -2,7 +2,9 @@ package com.example.dietproapp.ui.login
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.dietproapp.NavigasiActivity
+import com.example.dietproapp.R
 import com.example.dietproapp.core.data.source.remote.network.State
 import com.example.dietproapp.core.data.source.remote.request.LoginRequest
 import com.example.dietproapp.databinding.ActivityLoginBinding
@@ -21,6 +23,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val statusBarColor = ContextCompat.getColor(this, R.color.background)
+        window.statusBarColor = statusBarColor
 
         if (SPrefs.isLogin) {
             // Pengguna sudah login sebelumnya, langsung arahkan ke NavigasiActivity
