@@ -8,12 +8,13 @@ plugins {
 
 android {
     namespace 'com.example.dietproapp'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.dietproapp"
         minSdk 23
-        targetSdk 33
+        //noinspection EditedTargetSdkVersion
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -27,11 +28,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
     buildFeatures {
         viewBinding true
@@ -40,12 +41,12 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.2'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
@@ -54,19 +55,19 @@ dependencies {
 //    implementation 'androidx.databinding:databinding-runtime:7.0.3'
 
     //live data
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
 
     //scalabel size
-    implementation  'com.intuit.sdp:sdp-android:1.0.6'
-    implementation  'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
 
     //Retrofit
-    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.11'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.google.code.gson:gson:2.9.1'
+    implementation 'com.google.code.gson:gson:2.10.1'
 
     // Koin
     implementation "org.koin:koin-android:2.2.2"
@@ -83,17 +84,16 @@ dependencies {
     implementation 'com.github.TistoW:MyHelper:2.0.32'
 
     // shared preferences
-    implementation "com.chibatching.kotpref:kotpref:2.13.1"
+    implementation 'com.chibatching.kotpref:kotpref:2.13.2'
 
     // image picker
-    implementation 'com.github.Drjacky:ImagePicker:2.1.11'
+    implementation 'com.github.Drjacky:ImagePicker:2.3.22'
 
     // display image
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     // slider
-    implementation("com.tbuonomo:dotsindicator:4.3")
-
+    implementation('com.tbuonomo:dotsindicator:5.0')
     // bar chart
-    implementation 'com.diogobernardino:williamchart:3.10.1'
+    implementation 'com.diogobernardino:williamchart:3.11.0'
 }
