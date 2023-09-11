@@ -10,9 +10,6 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" tools:node="remove"/>
-
-
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
@@ -31,7 +28,7 @@
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/notif" />
+            android:resource="@drawable/dietpro" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />
@@ -88,10 +85,8 @@
         <activity android:name="com.example.dietproapp.ui.jurnalmakanan.MenuJurnalActivity" />
         <activity android:name="com.example.dietproapp.ui.jurnalmakanan.JurnalActivity" />
 
-        <service
-            android:name=".ui.notifications.firebase.MyFirebaseMessagingService"
-            android:exported="false"
-            tools:ignore="Instantiatable">
+        <service android:name=".MyFirebaseMessagingService"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

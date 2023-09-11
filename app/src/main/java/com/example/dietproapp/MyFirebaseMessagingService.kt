@@ -1,4 +1,4 @@
-package com.example.dietproapp.ui.notifications.firebase
+package com.example.dietproapp
 
 import android.annotation.SuppressLint
 import android.app.NotificationChannel
@@ -10,7 +10,6 @@ import android.os.Build
 import android.util.Log
 import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
-import com.example.dietproapp.R
 import com.example.dietproapp.ui.notifications.NotifikasiActivity
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -41,7 +40,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService()  {
 
         remoteView.setTextViewText(R.id.title, title)
         remoteView.setTextViewText(R.id.message, message)
-        remoteView.setImageViewResource(R.id.appLogo, R.drawable.notif)
+        remoteView.setImageViewResource(R.id.appLogo, R.drawable.dietpro)
 
         return remoteView
     }
