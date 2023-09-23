@@ -1,17 +1,20 @@
 package com.example.dietproapp.core.data.repository
 
 import com.example.dietproapp.core.data.source.local.LocalDataSource
-import com.example.dietproapp.core.data.source.model.Makanan
 import com.example.dietproapp.core.data.source.remote.RemoteDataSource
 import com.example.dietproapp.core.data.source.remote.network.Resource
 import com.example.dietproapp.core.data.source.remote.request.LoginRequest
+import com.example.dietproapp.core.data.source.remote.request.PasswordRequest
 import com.example.dietproapp.core.data.source.remote.request.RegisterRequest
 import com.example.dietproapp.core.data.source.remote.request.UpdateRequest
 import com.example.dietproapp.util.SPrefs
+import com.google.gson.JsonObject
 import com.inyongtisto.myhelper.extension.getErrorBody
 import com.inyongtisto.myhelper.extension.logs
 import com.inyongtisto.myhelper.extension.toJson
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import okhttp3.MultipartBody
 
 class AppRepository(val local:LocalDataSource, val remote:RemoteDataSource) {
@@ -118,7 +121,7 @@ class AppRepository(val local:LocalDataSource, val remote:RemoteDataSource) {
            }
         }
 
-    fun menuJurnal() = flow <Resource<List<Makanan>>>{
+    fun menuJurnal() = flow {
         emit(Resource.loading(null))
         try {
             remote.menuJurnal().let {
@@ -137,6 +140,86 @@ class AppRepository(val local:LocalDataSource, val remote:RemoteDataSource) {
             emit(Resource.error(e.message?: "Terjadi Kesalahan", null))
            }
         }
+
+    fun store(idUser: Int?, requestJson: JsonObject) = flow {
+        emit(Resource.loading(null))
+        try {
+            val response = remote.store(idUser, requestJson)
+            if (response.isSuccessful) {
+                val body = response.body()
+                val user = body?.data
+                if (user != null) {
+                    emit(Resource.success(user))
+                } else {
+                    emit(Resource.error("Response body is empty", null))
+                }
+            } else {
+                val errorMessage = response.errorBody()?.string() ?: "Error Default"
+                emit(Resource.error(errorMessage, null))
+            }
+        } catch (e: Exception) {
+            emit(Resource.error(e.message ?: "Terjadi Kesalahan", null))
+        }
+    }.flowOn(Dispatchers.IO)
+
+    fun forgotPassword(data: PasswordRequest ) =   flow {
+        emit(Resource.loading(null))
+        try {
+            remote.forgotPassword(data).let {
+                if (it.isSuccessful) {
+                    val body    =   it.body()
+                    val user    = body?.data
+                    SPrefs.setUser(user) //untuk update data user terbaru
+                    emit(Resource.success(user))
+                } else {
+                    emit(Resource.error(it.getErrorBody()?.message
+                        ?: "Error Default", null))
+                }
+            }
+        } catch (e: Exception) {
+            emit(Resource.error(e.message ?: "Terjadi Kesalahan", null))
+        }
+    }
+
+    fun resetPassword(data: PasswordRequest ) =   flow {
+        emit(Resource.loading(null))
+        try {
+            remote.resetPassword(data).let {
+                if (it.isSuccessful) {
+                    val body    =   it.body()
+                    val user    = body?.data
+//                    SPrefs.setUser(user) //untuk update data user terbaru
+                    emit(Resource.success(user))
+                } else {
+                    emit(Resource.error(it.getErrorBody()?.message
+                        ?: "Error Default", null))
+                }
+            }
+        } catch (e: Exception) {
+            emit(Resource.error(e.message ?: "Terjadi Kesalahan", null))
+        }
+    }
+
+    fun getNews() = flow {
+        emit(Resource.loading(null))
+        try {
+            remote.getNews().let { response ->
+                if (response.isSuccessful) {
+                    val newsResponse = response.body()
+                    if (newsResponse != null && newsResponse.status == "ok") {
+                        logs("news","$newsResponse")
+                        emit(Resource.success(newsResponse))
+                    } else {
+                        emit(Resource.error("API response status is not 'ok'", null))
+                    }
+                } else {
+                    emit(Resource.error(response.errorBody()?.string() ?: "Error Default", null))
+                }
+            }
+        } catch (e: Exception) {
+            emit(Resource.error(e.message ?: "Terjadi Kesalahan", null))
+            }
+    }
 
 //    class   ErrorCustom (
 //        val ok: Boolean,

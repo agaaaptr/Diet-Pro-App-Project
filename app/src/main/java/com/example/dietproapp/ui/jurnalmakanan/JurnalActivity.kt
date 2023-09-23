@@ -1,6 +1,7 @@
 package com.example.dietproapp.ui.jurnalmakanan
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,6 +11,9 @@ import com.example.dietproapp.core.data.source.remote.network.State
 import com.example.dietproapp.databinding.ActivityJurnalBinding
 import com.example.dietproapp.ui.base.MyActivity
 import com.example.dietproapp.ui.jurnalmakanan.adapter.MenuJurnalAdapter
+import com.example.dietproapp.util.SPrefs
+import com.google.gson.JsonArray
+import com.google.gson.JsonObject
 import com.inyongtisto.myhelper.extension.intentActivity
 import com.inyongtisto.myhelper.extension.logs
 import com.inyongtisto.myhelper.extension.toJson
@@ -38,7 +42,6 @@ class JurnalActivity : MyActivity() {
         getData()
         mainButton()
         setupSearchView()
-
     }
 
     private fun setupSearchView() {
@@ -57,6 +60,10 @@ class JurnalActivity : MyActivity() {
     private fun mainButton() {
         binding.imgBack.setOnClickListener {
             intentActivity(MenuJurnalActivity::class.java)
+        }
+
+        binding.fabSimpan.setOnClickListener {
+            store()
         }
     }
 
@@ -86,6 +93,50 @@ class JurnalActivity : MyActivity() {
             }
         }
     }
+
+    private fun store() {
+        val user = SPrefs.getUser() // Ambil model User dari SPrefs
+        val idUser = user?.id
+
+        val selectedFoodIds = mutableListOf<Int>()
+
+        // Loop melalui setiap checkbox untuk memeriksa apakah dicentang
+        for ((position, isChecked) in adapter.checkedItems) {
+            if (isChecked) {
+                // Mendapatkan ID makanan dari data yang sesuai
+                val foodId = adapter.data[position].id // Ganti dengan cara Anda mendapatkan ID makanan dari item
+                selectedFoodIds.add(foodId)
+            }
+        }
+
+        // Buat JSON Object yang berisi data yang akan dikirimkan ke server
+        val requestJson = JsonObject()
+        val idMakananArray = JsonArray()
+        selectedFoodIds.forEach { idMakananArray.add(it) }
+        requestJson.add("id_makanan", idMakananArray)
+
+
+        viewModel.store(idUser,requestJson).observe(this) {
+            when (it.state) {
+                State.SUCCESS -> {
+                    val message = "Data telah disimpan."
+                    showToast(message)
+
+                }
+                State.ERROR -> {
+                    val message = "gagal menambahkan data."
+                    showToast(message)
+                }
+                State.LOADING -> {
+                    // Tindakan yang perlu dilakukan saat loading
+                }
+            }
+        }
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        }
 
     override fun onDestroy() {
         super.onDestroy()

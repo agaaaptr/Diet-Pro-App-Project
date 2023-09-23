@@ -1,5 +1,9 @@
 package com.example.dietproapp.core.data.source.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class User(
     val berat_badan: String?,
     val created_at: String?,
@@ -18,4 +22,4 @@ data class User(
     val usia: String?,
     val makan: Makanan?,
     val token: String?
-)
+):Parcelable

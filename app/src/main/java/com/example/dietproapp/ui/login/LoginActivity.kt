@@ -1,16 +1,20 @@
 package com.example.dietproapp.ui.login
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.example.dietproapp.NavigasiActivity
 import com.example.dietproapp.core.data.source.remote.network.State
 import com.example.dietproapp.core.data.source.remote.request.LoginRequest
 import com.example.dietproapp.databinding.ActivityLoginBinding
+import com.example.dietproapp.ui.base.MyActivity
 import com.example.dietproapp.util.SPrefs
-import com.inyongtisto.myhelper.extension.*
+import com.inyongtisto.myhelper.extension.intentActivity
+import com.inyongtisto.myhelper.extension.isEmpty
+import com.inyongtisto.myhelper.extension.pushActivity
+import com.inyongtisto.myhelper.extension.showToast
+import com.inyongtisto.myhelper.extension.toastError
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : MyActivity() {
 
     private val viewModel: AuthViewModel by viewModel()
 
@@ -33,8 +37,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun mainButton() {
-        binding.btnMasuk.setOnClickListener {
-            login()
+
+        binding.forgotPassword.setOnClickListener {
+            intentActivity(forgotPasswordActivity::class.java)
         }
 
         binding.btnMoveDaftar.setOnClickListener {

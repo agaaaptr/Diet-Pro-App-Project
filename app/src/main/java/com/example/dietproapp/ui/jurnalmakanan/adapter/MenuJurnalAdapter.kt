@@ -13,10 +13,11 @@ import java.util.Locale
 @SuppressLint("NotifyDataSetChanged")
 class MenuJurnalAdapter : RecyclerView.Adapter<MenuJurnalAdapter.ViewHolder>(), Filterable {
 
-    private var data = ArrayList<Makanan>()
+    var data = ArrayList<Makanan>()
     private var filteredData = ArrayList<Makanan>()
+    val checkedItems = mutableMapOf<Int, Boolean>()
 
-    inner class ViewHolder(private val itemBinding: ListJurnalBinding) :
+    inner class ViewHolder(val itemBinding: ListJurnalBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
         fun bind(item: Makanan, position: Int) {
             itemBinding.apply {
@@ -67,16 +68,40 @@ class MenuJurnalAdapter : RecyclerView.Adapter<MenuJurnalAdapter.ViewHolder>(), 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
+        val viewHolder = ViewHolder(
             ListJurnalBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
             )
         )
+        // Tambahkan listener untuk checkbox di sini
+        viewHolder.itemBinding.cbMakanan.setOnCheckedChangeListener { _, isChecked ->
+            val position = viewHolder.adapterPosition
+            checkedItems[position] = isChecked
+        }
+
+        return viewHolder
     }
 
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val makanan = data[position]
+        holder.bind(makanan, position)
+
+        // Check if Energi_kkal is not null before setting it in your view
+        val energiKkal = makanan.Energi_kkal
+        holder.itemBinding.cbMakanan.isChecked = checkedItems[position] ?: false
+
+        if (energiKkal != null) {
+            holder.itemBinding.EnKkal.text = energiKkal
+        } else {
+            // Handle the case where Energi_kkal is null (optional)
+            holder.itemBinding.EnKkal.text = "N/A"
+        }
+//        holder.bind(data[position], position)
+
+        holder.itemBinding.cbMakanan.isChecked = checkedItems[position]?:false
         holder.bind(filteredData[position], position)
     }
 

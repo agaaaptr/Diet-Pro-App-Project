@@ -7,6 +7,7 @@ import androidx.lifecycle.asLiveData
 import com.example.dietproapp.core.data.repository.AppRepository
 import com.example.dietproapp.core.data.source.local.DummyData
 import com.example.dietproapp.core.data.source.model.Makanan
+import com.google.gson.JsonObject
 
 class JurnalMenuViewModel(private val repo:AppRepository): ViewModel() {
 
@@ -16,6 +17,6 @@ class JurnalMenuViewModel(private val repo:AppRepository): ViewModel() {
 
     fun getmenuJurnal() =   repo.getmenuJurnal().asLiveData()
     fun menuJurnal() =   repo.menuJurnal().asLiveData()
-
+    fun store(idUser: Int?, requestJson: JsonObject) = repo.store(idUser, requestJson).asLiveData()
 
 }
