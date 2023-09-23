@@ -4,7 +4,8 @@
     android:id="@+id/frameListInfo"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="20dp">
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginVertical="10dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,9 +20,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
             android:adjustViewBounds="true"
             android:background="@drawable/maintenance"
             android:scaleType="centerCrop" />
@@ -46,7 +45,6 @@
                 android:id="@+id/tvNameSourceInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
                 android:text="Alfa - CNN Indonesia"
                 android:textSize="12sp" />
 
