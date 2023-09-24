@@ -196,7 +196,7 @@
             android:hint="Height"
             android:textColorHint="#808080"
             android:textColor="@color/black"
-            android:inputType="textPassword"
+            android:inputType="text|number"
             android:paddingLeft="15dp"
             android:textSize="13sp" />
 
@@ -219,7 +219,7 @@
             android:hint="Weight"
             android:textColorHint="#808080"
             android:textColor="@color/black"
-            android:inputType="textPassword"
+            android:inputType="text|number"
             android:paddingLeft="15dp"
             android:textSize="13sp" />
 

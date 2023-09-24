@@ -52,11 +52,11 @@ class ProfilActivity : AppCompatActivity() {
             binding.apply {
                 tvNamaProfil.text = user.nama
                 tvTipeakun.text  = user.email
-                edtEmail.setText(user.email)
-                edtUsername.setText(user.username)
-                edtGender.setText(user.usia)
-                edtHeight.setText(user.tinggi_badan)
-                edtWeight.setText(user.berat_badan)
+                tvEmail.setText(user.email)
+                tvUsername.setText(user.username)
+                tvGender.setText(user.usia)
+                tvHeight.setText(user.tinggi_badan)
+                tvWeight.setText(user.berat_badan)
                 tvInisialProfil.text    =   user.nama.getInitial()
 
                 Picasso.get().load(Constants.USER_URL +user.foto_profil).into(binding.imgProfil)

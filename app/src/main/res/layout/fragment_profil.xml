@@ -161,16 +161,25 @@
 
     </RelativeLayout>
 
-    <EditText
+    <TextView
         android:clickable="false"
-        android:id="@+id/edt_username"
-        android:layout_width="339dp"
-        android:layout_height="40dp"
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:fontFamily="@font/poppins_medium"
         android:textSize="13sp"
-        android:layout_marginStart="33dp"
+        android:layout_marginStart="35dp"
         android:text="Username" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginStart="35dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/text1"
+        android:background="#D3D3D3" />
 
 
     <RelativeLayout
@@ -200,16 +209,25 @@
 
     </RelativeLayout>
 
-    <EditText
+    <TextView
         android:clickable="false"
-        android:id="@+id/edt_email"
-        android:layout_width="339dp"
-        android:layout_height="40dp"
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:fontFamily="@font/poppins_medium"
         android:textSize="13sp"
-        android:layout_marginStart="33dp"
+        android:layout_marginStart="35dp"
         android:text="Email" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginStart="35dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/text1"
+        android:background="#D3D3D3" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -238,16 +256,25 @@
 
     </RelativeLayout>
 
-    <EditText
+    <TextView
         android:clickable="false"
-        android:id="@+id/edt_gender"
-        android:layout_width="339dp"
-        android:layout_height="40dp"
+        android:id="@+id/tv_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:fontFamily="@font/poppins_medium"
         android:textSize="13sp"
-        android:layout_marginStart="33dp"
+        android:layout_marginStart="35dp"
         android:text="Gender" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginStart="35dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/text1"
+        android:background="#D3D3D3" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -276,16 +303,25 @@
 
     </RelativeLayout>
 
-    <EditText
+    <TextView
         android:clickable="false"
-        android:id="@+id/edt_height"
-        android:layout_width="339dp"
-        android:layout_height="40dp"
+        android:id="@+id/tv_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:fontFamily="@font/poppins_medium"
         android:textSize="13sp"
-        android:layout_marginStart="33dp"
+        android:layout_marginStart="35dp"
         android:text="Height" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginStart="35dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/text1"
+        android:background="#D3D3D3" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -314,29 +350,25 @@
 
     </RelativeLayout>
 
-    <EditText
+    <TextView
         android:clickable="false"
-        android:id="@+id/edt_weight"
-        android:layout_width="339dp"
-        android:layout_height="40dp"
+        android:id="@+id/tv_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:fontFamily="@font/poppins_medium"
         android:textSize="13sp"
-        android:layout_marginStart="33dp"
+        android:layout_marginStart="35dp"
         android:text="Weight" />
 
-    <!--    <TextView-->
-<!--        android:id="@+id/text_profil"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="8dp"-->
-<!--        android:layout_marginTop="8dp"-->
-<!--        android:layout_marginEnd="8dp"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textSize="20sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginStart="35dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/text1"
+        android:background="#D3D3D3" />
+
 
 </LinearLayout>
