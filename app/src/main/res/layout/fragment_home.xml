@@ -8,6 +8,14 @@
     android:backgroundTint="@color/background"
     tools:context=".ui.home.HomeFragment">
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/shimmer_view"
+        android:layout_centerInParent="true">
+        <include layout="@layout/list_homenews"/>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"

@@ -1,6 +1,8 @@
 package com.example.dietproapp.ui.home
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +17,7 @@ import com.example.dietproapp.ui.notifications.NotifikasiActivity
 import com.example.dietproapp.ui.profil.ProfilActivity
 import com.example.dietproapp.util.Constants
 import com.example.dietproapp.util.SPrefs
+import com.example.dietproapp.util.addOnItemClickListener
 import com.inyongtisto.myhelper.extension.getInitial
 import com.inyongtisto.myhelper.extension.intentActivity
 import com.inyongtisto.myhelper.extension.logs
@@ -43,6 +46,17 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        //Shimmer Effect
+        binding.fl.visibility = View.GONE
+        binding.shimmerView.stopShimmerAnimation()
+
+        Handler().postDelayed({
+            binding.fl.visibility   =   View.VISIBLE
+            binding.shimmerView.stopShimmerAnimation()
+            binding.shimmerView.visibility  =   View.GONE
+        },5000)//seconds
+        //after 5 seconds loading ui will be show
+
         swipeRefreshLayout = binding.swipeRefreshLayout
         swipeRefreshLayout.setOnRefreshListener {
             // Panggil fungsi untuk melakukan refresh data di sini
@@ -53,6 +67,7 @@ class HomeFragment : Fragment() {
         getnews()
         setUser()
         mainButton()
+
         return root
     }
 
@@ -64,6 +79,14 @@ class HomeFragment : Fragment() {
     }
 
     private fun mainButton() {
+
+        binding.rvListHomeNews.addOnItemClickListener { position, _ ->
+            val selectedArticle = adapter.data[position]
+            val intent = Intent(requireContext(), DetailHomeNewsActivity::class.java)
+            intent.putExtra("article_url", selectedArticle.url)
+            startActivity(intent)
+        }
+
         binding.profile.setOnClickListener {
             intentActivity(ProfilActivity::class.java)
         }
@@ -86,7 +109,7 @@ class HomeFragment : Fragment() {
         if (user != null) {
             binding.apply {
                 tvUsername.text = user.nama
-                tvTipeakun.text = user.email
+                tvTipeakun.text = user.role
                 tvInisialProfil.text = user.nama.getInitial()
 
                 val targetKalori = user.kebutuhan_kalori

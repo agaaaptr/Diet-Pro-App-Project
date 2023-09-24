@@ -107,6 +107,9 @@ dependencies {
     //UrltoImage
     implementation 'com.github.bumptech.glide:glide:4.14.2'
 
+    //Shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+
 }
 
 

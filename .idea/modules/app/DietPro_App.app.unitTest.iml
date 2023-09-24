@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id=":app:unitTest" external.linked.project.path="$MODULE_DIR$/../../../app" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.type="sourceSet" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
-    <facet type="android" name="Android">
-      <configuration>
-        <option name="SELECTED_BUILD_VARIANT" value="debug" />
-        <option name="ALLOW_USER_CONFIGURATION" value="false" />
-        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
-        <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
-        <option name="RES_FOLDERS_RELATIVE_PATH" value="" />
-        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="" />
-        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
-      </configuration>
-    </facet>
     <facet type="kotlin-language" name="Kotlin">
       <configuration version="5" platform="JVM 1.8" allPlatforms="JVM [1.8]" useProjectSettings="false">
         <additionalVisibleModuleNames>:app:main</additionalVisibleModuleNames>
@@ -26,6 +15,7 @@
           <stringArguments>
             <stringArg name="classpath">
               <args>
+                <arg>$MODULE_DIR$/../../../app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/c10357bf3e2e5cb75ce7097200204bc7/transformed/jetified-MyHelper-2.0.32-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/0cbb080944aca0808ffae7b3a93f4ab3/transformed/jetified-viewbinding-7.3.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/ffb91c689a43144a37e251a8efe06930/transformed/jetified-constraintlayout-compose-1.0.1-api.jar</arg>
@@ -130,6 +120,7 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/08e01fb4b2d3f96242334e4b5af8c194/transformed/jetified-koin-android-2.2.2-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/1984794628ec993375af43fab1bc73f9/transformed/jetified-kotpref-2.13.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/0419e63a828be6c62af208c59dc675d6/transformed/jetified-dotsindicator-4.3-debug-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/569bc5edb3a98593e4b677bd67d69afa/transformed/jetified-shimmer-0.1.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/00014ea02df3a946407fa9e8e07789d2/transformed/jetified-kotlin-stdlib-jdk7-1.8.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/dba5a8ea0795a632a2a9ed95b6a2a94d/transformed/jetified-kotlin-android-extensions-runtime-1.8.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/87fd918b10a7e256c7acdf86aec3ab27/transformed/jetified-savedstate-ktx-1.2.1-api.jar</arg>
@@ -209,6 +200,17 @@
             <arrayArg name="pluginOptions" />
           </arrayArguments>
         </compilerArguments>
+      </configuration>
+    </facet>
+    <facet type="android" name="Android">
+      <configuration>
+        <option name="SELECTED_BUILD_VARIANT" value="debug" />
+        <option name="ALLOW_USER_CONFIGURATION" value="false" />
+        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
+        <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="" />
+        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="" />
+        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
       </configuration>
     </facet>
   </component>

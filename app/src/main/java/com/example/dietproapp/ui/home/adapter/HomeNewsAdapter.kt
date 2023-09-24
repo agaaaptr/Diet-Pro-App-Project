@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.example.dietproapp.R
 import com.example.dietproapp.core.data.source.remote.response.Article
 import com.example.dietproapp.databinding.ListHomenewsBinding
 
@@ -18,13 +20,21 @@ class HomeNewsAdapter : RecyclerView.Adapter<HomeNewsAdapter.ViewHolder>() {
         fun bind(item: Article, position: Int) {
             itemBinding.apply {
                 tvTitleInfo.text = item.title
-                tvNameSourceInfo.text = item.author
+                tvTimeAgoInfo.text = item.author
+                tvNameSourceInfo.text = item.source!!.name
                 tvDateTimeInfo.text = item.publishedAt
-//                imgThumbnailInfo.setImageResource(item.KH_g)
 
-                Glide.with(root)
-                    .load(item.urlToImage)
-                    .into(imgThumbnailInfo)
+//                Glide.with(root)
+//                    .load(item.urlToImage)
+//                    .into(imgThumbnailInfo)
+                if (item.urlToImage == null) {
+                    imgThumbnailInfo.setImageResource(R.drawable.maintenance)
+                } else {
+                    Glide.with(root)
+                        .load(item.urlToImage)
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .into(imgThumbnailInfo)
+                }
             }
         }
     }
