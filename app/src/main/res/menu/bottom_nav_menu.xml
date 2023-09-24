@@ -16,14 +16,14 @@
         android:icon="@drawable/statistik"
         android:title="@string/title_statistik" />
 
-    <item
-        android:id="@+id/navigation_konsultasi"
-        android:icon="@drawable/konsultasi_ic"
-        android:title="@string/title_konsultasi" />
+<!--    <item-->
+<!--        android:id="@+id/navigation_konsultasi"-->
+<!--        android:icon="@drawable/konsultasi_ic"-->
+<!--        android:title="@string/title_konsultasi" />-->
 
-    <item
-        android:id="@+id/navigation_chat"
-        android:icon="@drawable/chat"
-        android:title="@string/title_chat" />
+<!--    <item-->
+<!--        android:id="@+id/navigation_chat"-->
+<!--        android:icon="@drawable/chat"-->
+<!--        android:title="@string/title_chat" />-->
 
 </menu>

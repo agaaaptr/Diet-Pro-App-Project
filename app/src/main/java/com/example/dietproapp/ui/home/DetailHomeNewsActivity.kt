@@ -2,6 +2,8 @@ package com.example.dietproapp.ui.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.view.View
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dietproapp.databinding.ActivityDetailHomeNewsBinding
@@ -18,6 +20,17 @@ class DetailHomeNewsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 //        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+
+        //Shimmer Effect
+        binding.webView.visibility = View.GONE
+        binding.shimmerView.stopShimmerAnimation()
+
+        Handler().postDelayed({
+            binding.webView.visibility   =   View.VISIBLE
+            binding.shimmerView.stopShimmerAnimation()
+            binding.shimmerView.visibility  =   View.GONE
+        },5000)//seconds
+        //after 5 seconds loading ui will be show
 
         val articleUrl = intent.getStringExtra("article_url")
 
@@ -37,6 +50,7 @@ class DetailHomeNewsActivity : AppCompatActivity() {
             intentActivity(HomeFragment::class.java)
         }
 
+        //Share URL
         binding.imgShare.setOnClickListener {
             val articleUrl = intent.getStringExtra("article_url")
             val share = Intent(Intent.ACTION_SEND)

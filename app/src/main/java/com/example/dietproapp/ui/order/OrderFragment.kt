@@ -1,5 +1,7 @@
 package com.example.dietproapp.ui.order
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -29,11 +31,36 @@ class OrderFragment : Fragment() {
         _binding = FragmentOrderBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textOrder
-        orderViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        // Menambahkan event listener untuk tombol WhatsApp
+        mainButton()
         return root
+    }
+
+    private fun mainButton() {
+        binding.btnUrl.setOnClickListener {
+            openWhatsAppWithAdmin()
+        }
+    }
+
+    private fun openWhatsAppWithAdmin() {
+        try {
+            // Nomor WhatsApp admin yang akan dihubungi
+            val adminPhoneNumber = "+6288293213968" // Ganti dengan nomor WhatsApp admin yang sesuai
+            val contactNumber = "Admin"
+            val message = "Halo ${contactNumber}!, saya membutuhkan bantuan."
+
+            // Membuat URI untuk memulai WhatsApp
+            val uri = Uri.parse("https://api.whatsapp.com/send?phone=${adminPhoneNumber}&text=${message}")
+
+            // Membuat Intent untuk membuka WhatsApp
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+
+            // Memulai aplikasi WhatsApp
+            startActivity(intent)
+        } catch (e: Exception) {
+            // Handle jika terjadi kesalahan
+            e.printStackTrace()
+        }
     }
 
     override fun onDestroyView() {

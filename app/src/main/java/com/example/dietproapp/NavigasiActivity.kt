@@ -27,9 +27,9 @@ class NavigasiActivity : AppCompatActivity() {
             setOf(
                 R.id.navigation_home,
                 R.id.navigation_order,
-                R.id.navigation_statistik,
-                R.id.navigation_konsultasi,
-                R.id.navigation_chat
+                R.id.navigation_statistik
+//                R.id.navigation_konsultasi,
+//                R.id.navigation_chat
                 )
         )
 //        setupActionBarWithNavController(navController, appBarConfiguration)
