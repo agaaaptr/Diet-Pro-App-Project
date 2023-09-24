@@ -5,6 +5,7 @@
     <string name="title_order">Order</string>
     <string name="title_statistik">Statistik</string>
     <string name="title_konsultasi">Konsultasi</string>
+    <string name="title_tentang">Tentang</string>
     <string name="title_chat">Chat</string>
     <string name="title_activity_login">LoginActivity</string>
     <!-- Strings used for fragments for navigation -->

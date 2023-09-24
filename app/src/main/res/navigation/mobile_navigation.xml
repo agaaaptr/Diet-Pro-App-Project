@@ -18,5 +18,11 @@
         android:label="@string/title_statistik"
         tools:layout="@layout/fragment_statistik" />
 
+    <fragment
+        android:id="@+id/navigation_tentang"
+        android:name="com.example.dietproapp.ui.tentang.TentangFragment"
+        android:label="@string/title_tentang"
+        tools:layout="@layout/fragment_tentang" />
+
 
 </navigation>

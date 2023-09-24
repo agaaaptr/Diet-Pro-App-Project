@@ -20,6 +20,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ui.panduan.PanduanActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.profil.ProfilActivity"
             android:exported="false">
             <meta-data
@@ -64,7 +67,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name="com.example.dietproapp.ui.obslide.OnBoardingFragment" />
+        <activity android:name=".ui.obslide.OnBoardingFragment" />
     </application>
 
 </manifest>

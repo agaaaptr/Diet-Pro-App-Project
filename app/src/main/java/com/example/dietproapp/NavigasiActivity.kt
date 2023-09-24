@@ -27,6 +27,7 @@ class NavigasiActivity : AppCompatActivity() {
             setOf(
                 R.id.navigation_home,
                 R.id.navigation_statistik,
+                R.id.navigation_tentang
 
                 )
         )

@@ -11,5 +11,10 @@
         android:icon="@drawable/statistik"
         android:title="@string/title_statistik" />
 
+    <item
+        android:id="@+id/navigation_tentang"
+        android:icon="@drawable/info"
+        android:title="@string/title_tentang" />
+
 
 </menu>
