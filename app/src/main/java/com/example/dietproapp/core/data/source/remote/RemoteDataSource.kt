@@ -25,6 +25,7 @@ class RemoteDataSource(private val api: ApiService) {
 
     //Health News Api
     suspend fun getNews() = api.getNews()
+    suspend fun pushNotif() = api.pushNotif()
 
 
 }

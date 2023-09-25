@@ -221,6 +221,27 @@ class AppRepository(val local:LocalDataSource, val remote:RemoteDataSource) {
             }
     }
 
+    fun pushNotif() = flow {
+        emit(Resource.loading(null))
+        try {
+            remote.pushNotif().let { response ->
+                if (response.isSuccessful) {
+                    val notifResponse = response.body()
+                    if (notifResponse != null) {
+                        logs("notifikasi","$notifResponse")
+                        emit(Resource.success(notifResponse))
+                    } else {
+                        emit(Resource.error("API response status is not 'ok'", null))
+                    }
+                } else {
+                    emit(Resource.error(response.errorBody()?.string() ?: "Error Default", null))
+                }
+            }
+        } catch (e: Exception) {
+            emit(Resource.error(e.message ?: "Terjadi Kesalahan", null))
+        }
+    }
+
 //    class   ErrorCustom (
 //        val ok: Boolean,
 //        val error_code: Int,

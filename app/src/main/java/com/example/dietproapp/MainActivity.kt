@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dietproapp.ui.login.LoginActivity
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 
 class MainActivity : AppCompatActivity() {
@@ -17,13 +19,27 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        FirebaseMessaging.getInstance().subscribeToTopic("Reminder")
-            .addOnCompleteListener { task ->
-                var msg = "Done"
-                if (!task.isSuccessful) {
-                    msg = "Failed"
-                }
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w("Response", "Fetching FCM registration token failed", task.exception)
+                return@OnCompleteListener
             }
+
+            // Get new FCM registration token
+            val token = task.result
+
+            // Log and toast
+            Log.d("Response fcm:", token.toString())
+            Toast.makeText(baseContext, token, Toast.LENGTH_SHORT).show()
+        })
+
+//        FirebaseMessaging.getInstance().subscribeToTopic("Reminder")
+//            .addOnCompleteListener { task ->
+//                var msg = "Done"
+//                if (!task.isSuccessful) {
+//                    msg = "Failed"
+//                }
+//            }
 
         Log.d("RESPON", "PESAN SINGKAT")
 

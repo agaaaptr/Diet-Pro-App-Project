@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:id="@+id/shimmer_view"
         android:layout_centerInParent="true">
-        <include layout="@layout/list_homenews"/>
+        <include layout="@layout/fragment_dashboard"/>
     </com.facebook.shimmer.ShimmerFrameLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

@@ -10,6 +10,7 @@ import com.example.dietproapp.core.data.source.remote.response.LaporResponse
 import com.example.dietproapp.core.data.source.remote.response.LoginResponse
 import com.example.dietproapp.core.data.source.remote.response.MakananResponse
 import com.example.dietproapp.core.data.source.remote.response.NewsResponse
+import com.example.dietproapp.core.data.source.remote.response.NotifResponse
 import com.example.dietproapp.core.data.source.remote.response.PasswordResponse
 import com.google.gson.JsonObject
 import okhttp3.MultipartBody
@@ -73,5 +74,9 @@ interface ApiService {
     @GET("news")
     suspend fun getNews(
     ): Response<NewsResponse>
+
+    @POST("push")
+    suspend fun pushNotif(
+    ): Response<NotifResponse>
 
 }
