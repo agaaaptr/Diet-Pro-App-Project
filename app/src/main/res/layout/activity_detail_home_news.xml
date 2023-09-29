@@ -80,16 +80,10 @@
         android:layout_height="wrap_content"
         android:indeterminate="true" />
 
-        <com.facebook.shimmer.ShimmerFrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/shimmer_view"
-            android:layout_centerInParent="true">
-            <WebView
-                android:id="@+id/webView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </com.facebook.shimmer.ShimmerFrameLayout>
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     </LinearLayout>
 
